@@ -1,3 +1,55 @@
+
+Claude finished the response
+
+<!doctype html> <html lang="en"> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"> <title>Huntsville Fresh Food Directory</title> <script> try { var t = localStorage.getItem("hsv-theme"); if (t === "light" || t === "dark") docume
+
+pasted
+
+update the html page add a menu with farm fresh menu using fall fruits and veggies and a list of menus and popup with details keep all the current info and add info for a small group that garden and eats fresh .   Also include pumpkin and sweet potato recipes some raw , backed, lightly cook with many options and discuss the benefits of kale and starting with a start plant from a home depot or lowes.   explain how to start small and keep it simple .
+
+Ran 11 commands, read 4 files
+Fixing label wrapping and a mismatched split count.
+
+Huntsville Fresh Food Directory
+Artifact·Only you 
+I updated the page and kept everything from the original: all 14 markets and farms, the map, filters, produce guide, and dark mode. Here's what's new.
+
+Farm-fresh fall menu. A green "menu board" section with six menus: Harvest Sunday supper, Garden group potluck, Thirty-minute weeknight, Raw and crunchy lunch box, Fall brunch, and Cozy curry night. Each card lists its courses. Tap "Open this menu" for a popup with a step-by-step game plan, a tip, and links to the farms and markets to shop at. You can tap any dish inside a menu to jump to its recipe.
+
+18 recipes. These cover pumpkin, sweet potato, and kale, and you can filter them by Raw & no-cook, Baked & roasted, or Lightly cooked. Some examples:
+
+Raw: shaved pumpkin and apple salad, raw sweet potato and kale slaw.
+Baked: a sweet potato bar for groups, stuffed pumpkin halves, toasted pumpkin seeds.
+Lightly cooked: garlicky kale, pumpkin and white bean soup, a breakfast skillet.
+Each recipe popup has ingredients, numbered steps, why it's good for you, and a tip.
+
+Grow your own kale. This section covers:
+
+Kale's benefits, including a note for people on blood thinners.
+Which variety to buy.
+Six steps from a Home Depot or Lowe's starter plant to harvest, with North Alabama timing.
+A "keep it simple" plan: one pot, three plants, ten minutes a week.
+A weekly care routine, and one easy plant to add once kale is going well.
+For small garden groups. Ideas for sharing plants and costs, an agenda for the first get-together, monthly jobs that rotate, and a September to December group calendar. There's also a list of trip ideas that only shows the markets and farms open this month.
+
+I also added pumpkin and kale to the produce guide, so they now show in the "In season" box at the top.
+
+html file download
+
+Presented file
+Presented file
+Here's the HTML file to download. It opens in any web browser. You'll need an internet connection the first time so the map, fonts, and styling can load.
+
+
+Huntsville fresh
+Code·HTML 
+
+
+
+Claude is AI and can make mistakes.
+
+
+Huntsville fresh · HTML
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,7 +64,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.3/dist/index.global.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
-<style> .leaflet-pane, .leaflet-tile, .leaflet-marker-icon, .leaflet-marker-shadow, .leaflet-tile-container, .leaflet-pane > svg, .leaflet-pane > canvas, .leaflet-zoom-box, .leaflet-image-layer, .leaflet-layer { position: absolute; left: 0; top: 0; } .leaflet-container { overflow: hidden; } .leaflet-tile, .leaflet-marker-icon, .leaflet-marker-shadow { -webkit-user-select: none; -moz-user-select: none; user-select: none; -webkit-user-drag: none; } .leaflet-tile::selection { background: transparent; } .leaflet-safari .leaflet-tile { image-rendering: -webkit-optimize-contrast; } .leaflet-safari .leaflet-tile-container { width: 1600px; height: 1600px; -webkit-transform-origin: 0 0; } .leaflet-marker-icon, .leaflet-marker-shadow { display: block; } .leaflet-container .leaflet-overlay-pane svg { max-width: none !important; max-height: none !important; } .leaflet-container .leaflet-marker-pane img, .leaflet-container .leaflet-shadow-pane img, .leaflet-container .leaflet-tile-pane img, .leaflet-container img.leaflet-image-layer, .leaflet-container .leaflet-tile { max-width: none !important; max-height: none !important; width: auto; padding: 0; } .leaflet-container img.leaflet-tile { mix-blend-mode: plus-lighter; } .leaflet-container.leaflet-touch-zoom { -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; } .leaflet-container.leaflet-touch-drag { -ms-touch-action: pinch-zoom; touch-action: none; touch-action: pinch-zoom; } .leaflet-container.leaflet-touch-drag.leaflet-touch-zoom { -ms-touch-action: none; touch-action: none; } .leaflet-container { -webkit-tap-highlight-color: transparent; } .leaflet-container a { -webkit-tap-highlight-color: rgba(51, 181, 229, 0.4); } .leaflet-tile { filter: inherit; visibility: hidden; } .leaflet-tile-loaded { visibility: inherit; } .leaflet-zoom-box { width: 0; height: 0; -moz-box-sizing: border-box; box-sizing: border-box; z-index: 800; } .leaflet-overlay-pane svg { -moz-user-select: none; } .leaflet-pane { z-index: 400; } .leaflet-tile-pane { z-index: 200; } .leaflet-overlay-pane { z-index: 400; } .leaflet-shadow-pane { z-index: 500; } .leaflet-marker-pane { z-index: 600; } .leaflet-tooltip-pane { z-index: 650; } .leaflet-popup-pane { z-index: 700; } .leaflet-map-pane canvas { z-index: 100; } .leaflet-map-pane svg { z-index: 200; } .leaflet-vml-shape { width: 1px; height: 1px; } .leaflet-control { position: relative; z-index: 800; pointer-events: visiblePainted; pointer-events: auto; } .leaflet-top, .leaflet-bottom { position: absolute; z-index: 1000; pointer-events: none; } .leaflet-top { top: 0; } .leaflet-right { right: 0; } .leaflet-bottom { bottom: 0; } .leaflet-left { left: 0; } .leaflet-control { float: left; clear: both; } .leaflet-right .leaflet-control { float: right; } .leaflet-top .leaflet-control { margin-top: 10px; } .leaflet-bottom .leaflet-control { margin-bottom: 10px; } .leaflet-left .leaflet-control { margin-left: 10px; } .leaflet-right .leaflet-control { margin-right: 10px; } .leaflet-fade-anim .leaflet-popup { opacity: 0; -webkit-transition: opacity 0.2s linear; -moz-transition: opacity 0.2s linear; transition: opacity 0.2s linear; } .leaflet-fade-anim .leaflet-map-pane .leaflet-popup { opacity: 1; } .leaflet-zoom-animated { -webkit-transform-origin: 0 0; -ms-transform-origin: 0 0; transform-origin: 0 0; } svg.leaflet-zoom-animated { will-change: transform; } .leaflet-zoom-anim .leaflet-zoom-animated { -webkit-transition: -webkit-transform 0.25s cubic-bezier(0,0,0.25,1); -moz-transition: -moz-transform 0.25s cubic-bezier(0,0,0.25,1); transition: transform 0.25s cubic-bezier(0,0,0.25,1); } .leaflet-zoom-anim .leaflet-tile, .leaflet-pan-anim .leaflet-tile { -webkit-transition: none; -moz-transition: none; transition: none; } .leaflet-zoom-anim .leaflet-zoom-hide { visibility: hidden; } .leaflet-interactive { cursor: pointer; } .leaflet-grab { cursor: -webkit-grab; cursor: -moz-grab; cursor: grab; } .leaflet-crosshair, .leaflet-crosshair .leaflet-interactive { cursor: crosshair; } .leaflet-popup-pane, .leaflet-control { cursor: auto; } .leaflet-dragging .leaflet-grab, .leaflet-dragging .leaflet-grab .leaflet-interactive, .leaflet-dragging .leaflet-marker-draggable { cursor: move; cursor: -webkit-grabbing; cursor: -moz-grabbing; cursor: grabbing; } .leaflet-marker-icon, .leaflet-marker-shadow, .leaflet-image-layer, .leaflet-pane > svg path, .leaflet-tile-container { pointer-events: none; } .leaflet-marker-icon.leaflet-interactive, .leaflet-image-layer.leaflet-interactive, .leaflet-pane > svg path.leaflet-interactive, svg.leaflet-image-layer.leaflet-interactive path { pointer-events: visiblePainted; pointer-events: auto; } .leaflet-container { background: #ddd; outline-offset: 1px; } .leaflet-container a { color: #0078A8; } .leaflet-zoom-box { border: 2px dotted #38f; background: rgba(255,255,255,0.5); } .leaflet-container { font-family: "Helvetica Neue", Arial, Helvetica, sans-serif; font-size: 12px; font-size: 0.75rem; line-height: 1.5; } .leaflet-bar { box-shadow: 0 1px 5px rgba(0,0,0,0.65); border-radius: 4px; } .leaflet-bar a { background-color: #fff; border-bottom: 1px solid #ccc; width: 26px; height: 26px; line-height: 26px; display: block; text-align: center; text-decoration: none; color: black; } .leaflet-bar a, .leaflet-control-layers-toggle { background-position: 50% 50%; background-repeat: no-repeat; display: block; } .leaflet-bar a:hover, .leaflet-bar a:focus { background-color: #f4f4f4; } .leaflet-bar a:first-child { border-top-left-radius: 4px; border-top-right-radius: 4px; } .leaflet-bar a:last-child { border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-bottom: none; } .leaflet-bar a.leaflet-disabled { cursor: default; background-color: #f4f4f4; color: #bbb; } .leaflet-touch .leaflet-bar a { width: 30px; height: 30px; line-height: 30px; } .leaflet-touch .leaflet-bar a:first-child { border-top-left-radius: 2px; border-top-right-radius: 2px; } .leaflet-touch .leaflet-bar a:last-child { border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; } .leaflet-control-zoom-in, .leaflet-control-zoom-out { font: bold 18px 'Lucida Console', Monaco, monospace; text-indent: 1px; } .leaflet-touch .leaflet-control-zoom-in, .leaflet-touch .leaflet-control-zoom-out { font-size: 22px; } .leaflet-control-layers { box-shadow: 0 1px 5px rgba(0,0,0,0.4); background: #fff; border-radius: 5px; } .leaflet-touch .leaflet-control-layers-toggle { width: 44px; height: 44px; } .leaflet-control-layers .leaflet-control-layers-list, .leaflet-control-layers-expanded .leaflet-control-layers-toggle { display: none; } .leaflet-control-layers-expanded .leaflet-control-layers-list { display: block; position: relative; } .leaflet-control-layers-expanded { padding: 6px 10px 6px 6px; color: #333; background: #fff; } .leaflet-control-layers-scrollbar { overflow-y: scroll; overflow-x: hidden; padding-right: 5px; } .leaflet-control-layers-selector { margin-top: 2px; position: relative; top: 1px; } .leaflet-control-layers label { display: block; font-size: 13px; font-size: 1.08333em; } .leaflet-control-layers-separator { height: 0; border-top: 1px solid #ddd; margin: 5px -10px 5px -6px; } .leaflet-container .leaflet-control-attribution { background: #fff; background: rgba(255, 255, 255, 0.8); margin: 0; } .leaflet-control-attribution, .leaflet-control-scale-line { padding: 0 5px; color: #333; line-height: 1.4; } .leaflet-control-attribution a { text-decoration: none; } .leaflet-control-attribution a:hover, .leaflet-control-attribution a:focus { text-decoration: underline; } .leaflet-attribution-flag { display: inline !important; vertical-align: baseline !important; width: 1em; height: 0.6669em; } .leaflet-left .leaflet-control-scale { margin-left: 5px; } .leaflet-bottom .leaflet-control-scale { margin-bottom: 5px; } .leaflet-control-scale-line { border: 2px solid #777; border-top: none; line-height: 1.1; padding: 2px 5px 1px; white-space: nowrap; -moz-box-sizing: border-box; box-sizing: border-box; background: rgba(255, 255, 255, 0.8); text-shadow: 1px 1px #fff; } .leaflet-control-scale-line:not(:first-child) { border-top: 2px solid #777; border-bottom: none; margin-top: -2px; } .leaflet-control-scale-line:not(:first-child):not(:last-child) { border-bottom: 2px solid #777; } .leaflet-touch .leaflet-control-attribution, .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar { box-shadow: none; } .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar { border: 2px solid rgba(0,0,0,0.2); background-clip: padding-box; } .leaflet-popup { position: absolute; text-align: center; margin-bottom: 20px; } .leaflet-popup-content-wrapper { padding: 1px; text-align: left; border-radius: 12px; } .leaflet-popup-content { margin: 13px 24px 13px 20px; line-height: 1.3; font-size: 13px; font-size: 1.08333em; min-height: 1px; }  .leaflet-popup-tip-container { width: 40px; height: 20px; position: absolute; left: 50%; margin-top: -1px; margin-left: -20px; overflow: hidden; pointer-events: none; } .leaflet-popup-tip { width: 17px; height: 17px; padding: 1px; margin: -10px auto 0; pointer-events: auto; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); } .leaflet-popup-content-wrapper, .leaflet-popup-tip { background: white; color: #333; box-shadow: 0 3px 14px rgba(0,0,0,0.4); } .leaflet-container a.leaflet-popup-close-button { position: absolute; top: 0; right: 0; border: none; text-align: center; width: 24px; height: 24px; font: 16px/24px Tahoma, Verdana, sans-serif; color: #757575; text-decoration: none; background: transparent; } .leaflet-container a.leaflet-popup-close-button:hover, .leaflet-container a.leaflet-popup-close-button:focus { color: #585858; } .leaflet-popup-scrolled { overflow: auto; } .leaflet-oldie .leaflet-popup-content-wrapper { -ms-zoom: 1; } .leaflet-oldie .leaflet-popup-tip { width: 24px; margin: 0 auto; -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)"; filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678); } .leaflet-oldie .leaflet-control-zoom, .leaflet-oldie .leaflet-control-layers, .leaflet-oldie .leaflet-popup-content-wrapper, .leaflet-oldie .leaflet-popup-tip { border: 1px solid #999; } .leaflet-div-icon { background: #fff; border: 1px solid #666; } .leaflet-tooltip { position: absolute; padding: 6px; background-color: #fff; border: 1px solid #fff; border-radius: 3px; color: #222; white-space: nowrap; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; pointer-events: none; box-shadow: 0 1px 3px rgba(0,0,0,0.4); } .leaflet-tooltip.leaflet-interactive { cursor: pointer; pointer-events: auto; } .leaflet-tooltip-top:before, .leaflet-tooltip-bottom:before, .leaflet-tooltip-left:before, .leaflet-tooltip-right:before { position: absolute; pointer-events: none; border: 6px solid transparent; background: transparent; content: ""; } .leaflet-tooltip-bottom { margin-top: 6px; } .leaflet-tooltip-top { margin-top: -6px; } .leaflet-tooltip-bottom:before, .leaflet-tooltip-top:before { left: 50%; margin-left: -6px; } .leaflet-tooltip-top:before { bottom: 0; margin-bottom: -12px; border-top-color: #fff; } .leaflet-tooltip-bottom:before { top: 0; margin-top: -12px; margin-left: -6px; border-bottom-color: #fff; } .leaflet-tooltip-left { margin-left: -6px; } .leaflet-tooltip-right { margin-left: 6px; } .leaflet-tooltip-left:before, .leaflet-tooltip-right:before { top: 50%; margin-top: -6px; } .leaflet-tooltip-left:before { right: 0; margin-right: -12px; border-left-color: #fff; } .leaflet-tooltip-right:before { left: 0; margin-left: -12px; border-right-color: #fff; } @media print { .leaflet-control { -webkit-print-color-adjust: exact; print-color-adjust: exact; } } </style>
+<style> 
+.leaflet-pane, .leaflet-tile, .leaflet-marker-icon, .leaflet-marker-shadow, .leaflet-tile-container, .leaflet-pane > svg, .leaflet-pane > canvas, .leaflet-zoom-box, .leaflet-image-layer, .leaflet-layer { position: absolute; left: 0; top: 0; } .leaflet-container { overflow: hidden; } .leaflet-tile, .leaflet-marker-icon, .leaflet-marker-shadow { -webkit-user-select: none; -moz-user-select: none; user-select: none; -webkit-user-drag: none; } .leaflet-tile::selection { background: transparent; } .leaflet-safari .leaflet-tile { image-rendering: -webkit-optimize-contrast; } .leaflet-safari .leaflet-tile-container { width: 1600px; height: 1600px; -webkit-transform-origin: 0 0; } .leaflet-marker-icon, .leaflet-marker-shadow { display: block; } .leaflet-container .leaflet-overlay-pane svg { max-width: none !important; max-height: none !important; } .leaflet-container .leaflet-marker-pane img, .leaflet-container .leaflet-shadow-pane img, .leaflet-container .leaflet-tile-pane img, .leaflet-container img.leaflet-image-layer, .leaflet-container .leaflet-tile { max-width: none !important; max-height: none !important; width: auto; padding: 0; } .leaflet-container img.leaflet-tile { mix-blend-mode: plus-lighter; } .leaflet-container.leaflet-touch-zoom { -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; } .leaflet-container.leaflet-touch-drag { -ms-touch-action: pinch-zoom; touch-action: none; touch-action: pinch-zoom; } .leaflet-container.leaflet-touch-drag.leaflet-touch-zoom { -ms-touch-action: none; touch-action: none; } .leaflet-container { -webkit-tap-highlight-color: transparent; } .leaflet-container a { -webkit-tap-highlight-color: rgba(51, 181, 229, 0.4); } .leaflet-tile { filter: inherit; visibility: hidden; } .leaflet-tile-loaded { visibility: inherit; } .leaflet-zoom-box { width: 0; height: 0; -moz-box-sizing: border-box; box-sizing: border-box; z-index: 800; } .leaflet-overlay-pane svg { -moz-user-select: none; } .leaflet-pane { z-index: 400; } .leaflet-tile-pane { z-index: 200; } .leaflet-overlay-pane { z-index: 400; } .leaflet-shadow-pane { z-index: 500; } .leaflet-marker-pane { z-index: 600; } .leaflet-tooltip-pane { z-index: 650; } .leaflet-popup-pane { z-index: 700; } .leaflet-map-pane canvas { z-index: 100; } .leaflet-map-pane svg { z-index: 200; } .leaflet-vml-shape { width: 1px; height: 1px; } .leaflet-control { position: relative; z-index: 800; pointer-events: visiblePainted; pointer-events: auto; } .leaflet-top, .leaflet-bottom { position: absolute; z-index: 1000; pointer-events: none; } .leaflet-top { top: 0; } .leaflet-right { right: 0; } .leaflet-bottom { bottom: 0; } .leaflet-left { left: 0; } .leaflet-control { float: left; clear: both; } .leaflet-right .leaflet-control { float: right; } .leaflet-top .leaflet-control { margin-top: 10px; } .leaflet-bottom .leaflet-control { margin-bottom: 10px; } .leaflet-left .leaflet-control { margin-left: 10px; } .leaflet-right .leaflet-control { margin-right: 10px; } .leaflet-fade-anim .leaflet-popup { opacity: 0; -webkit-transition: opacity 0.2s linear; -moz-transition: opacity 0.2s linear; transition: opacity 0.2s linear; } .leaflet-fade-anim .leaflet-map-pane .leaflet-popup { opacity: 1; } .leaflet-zoom-animated { -webkit-transform-origin: 0 0; -ms-transform-origin: 0 0; transform-origin: 0 0; } svg.leaflet-zoom-animated { will-change: transform; } .leaflet-zoom-anim .leaflet-zoom-animated { -webkit-transition: -webkit-transform 0.25s cubic-bezier(0,0,0.25,1); -moz-transition: -moz-transform 0.25s cubic-bezier(0,0,0.25,1); transition: transform 0.25s cubic-bezier(0,0,0.25,1); } .leaflet-zoom-anim .leaflet-tile, .leaflet-pan-anim .leaflet-tile { -webkit-transition: none; -moz-transition: none; transition: none; } .leaflet-zoom-anim .leaflet-zoom-hide { visibility: hidden; } .leaflet-interactive { cursor: pointer; } .leaflet-grab { cursor: -webkit-grab; cursor: -moz-grab; cursor: grab; } .leaflet-crosshair, .leaflet-crosshair .leaflet-interactive { cursor: crosshair; } .leaflet-popup-pane, .leaflet-control { cursor: auto; } .leaflet-dragging .leaflet-grab, .leaflet-dragging .leaflet-grab .leaflet-interactive, .leaflet-dragging .leaflet-marker-draggable { cursor: move; cursor: -webkit-grabbing; cursor: -moz-grabbing; cursor: grabbing; } .leaflet-marker-icon, .leaflet-marker-shadow, .leaflet-image-layer, .leaflet-pane > svg path, .leaflet-tile-container { pointer-events: none; } .leaflet-marker-icon.leaflet-interactive, .leaflet-image-layer.leaflet-interactive, .leaflet-pane > svg path.leaflet-interactive, svg.leaflet-image-layer.leaflet-interactive path { pointer-events: visiblePainted; pointer-events: auto; } .leaflet-container { background: #ddd; outline-offset: 1px; } .leaflet-container a { color: #0078A8; } .leaflet-zoom-box { border: 2px dotted #38f; background: rgba(255,255,255,0.5); } .leaflet-container { font-family: "Helvetica Neue", Arial, Helvetica, sans-serif; font-size: 12px; font-size: 0.75rem; line-height: 1.5; } .leaflet-bar { box-shadow: 0 1px 5px rgba(0,0,0,0.65); border-radius: 4px; } .leaflet-bar a { background-color: #fff; border-bottom: 1px solid #ccc; width: 26px; height: 26px; line-height: 26px; display: block; text-align: center; text-decoration: none; color: black; } .leaflet-bar a, .leaflet-control-layers-toggle { background-position: 50% 50%; background-repeat: no-repeat; display: block; } .leaflet-bar a:hover, .leaflet-bar a:focus { background-color: #f4f4f4; } .leaflet-bar a:first-child { border-top-left-radius: 4px; border-top-right-radius: 4px; } .leaflet-bar a:last-child { border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-bottom: none; } .leaflet-bar a.leaflet-disabled { cursor: default; background-color: #f4f4f4; color: #bbb; } .leaflet-touch .leaflet-bar a { width: 30px; height: 30px; line-height: 30px; } .leaflet-touch .leaflet-bar a:first-child { border-top-left-radius: 2px; border-top-right-radius: 2px; } .leaflet-touch .leaflet-bar a:last-child { border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; } .leaflet-control-zoom-in, .leaflet-control-zoom-out { font: bold 18px 'Lucida Console', Monaco, monospace; text-indent: 1px; } .leaflet-touch .leaflet-control-zoom-in, .leaflet-touch .leaflet-control-zoom-out { font-size: 22px; } .leaflet-control-layers { box-shadow: 0 1px 5px rgba(0,0,0,0.4); background: #fff; border-radius: 5px; } .leaflet-touch .leaflet-control-layers-toggle { width: 44px; height: 44px; } .leaflet-control-layers .leaflet-control-layers-list, .leaflet-control-layers-expanded .leaflet-control-layers-toggle { display: none; } .leaflet-control-layers-expanded .leaflet-control-layers-list { display: block; position: relative; } .leaflet-control-layers-expanded { padding: 6px 10px 6px 6px; color: #333; background: #fff; } .leaflet-control-layers-scrollbar { overflow-y: scroll; overflow-x: hidden; padding-right: 5px; } .leaflet-control-layers-selector { margin-top: 2px; position: relative; top: 1px; } .leaflet-control-layers label { display: block; font-size: 13px; font-size: 1.08333em; } .leaflet-control-layers-separator { height: 0; border-top: 1px solid #ddd; margin: 5px -10px 5px -6px; } .leaflet-container .leaflet-control-attribution { background: #fff; background: rgba(255, 255, 255, 0.8); margin: 0; } .leaflet-control-attribution, .leaflet-control-scale-line { padding: 0 5px; color: #333; line-height: 1.4; } .leaflet-control-attribution a { text-decoration: none; } .leaflet-control-attribution a:hover, .leaflet-control-attribution a:focus { text-decoration: underline; } .leaflet-attribution-flag { display: inline !important; vertical-align: baseline !important; width: 1em; height: 0.6669em; } .leaflet-left .leaflet-control-scale { margin-left: 5px; } .leaflet-bottom .leaflet-control-scale { margin-bottom: 5px; } .leaflet-control-scale-line { border: 2px solid #777; border-top: none; line-height: 1.1; padding: 2px 5px 1px; white-space: nowrap; -moz-box-sizing: border-box; box-sizing: border-box; background: rgba(255, 255, 255, 0.8); text-shadow: 1px 1px #fff; } .leaflet-control-scale-line:not(:first-child) { border-top: 2px solid #777; border-bottom: none; margin-top: -2px; } .leaflet-control-scale-line:not(:first-child):not(:last-child) { border-bottom: 2px solid #777; } .leaflet-touch .leaflet-control-attribution, .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar { box-shadow: none; } .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar { border: 2px solid rgba(0,0,0,0.2); background-clip: padding-box; } .leaflet-popup { position: absolute; text-align: center; margin-bottom: 20px; } .leaflet-popup-content-wrapper { padding: 1px; text-align: left; border-radius: 12px; } .leaflet-popup-content { margin: 13px 24px 13px 20px; line-height: 1.3; font-size: 13px; font-size: 1.08333em; min-height: 1px; }  .leaflet-popup-tip-container { width: 40px; height: 20px; position: absolute; left: 50%; margin-top: -1px; margin-left: -20px; overflow: hidden; pointer-events: none; } .leaflet-popup-tip { width: 17px; height: 17px; padding: 1px; margin: -10px auto 0; pointer-events: auto; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); } .leaflet-popup-content-wrapper, .leaflet-popup-tip { background: white; color: #333; box-shadow: 0 3px 14px rgba(0,0,0,0.4); } .leaflet-container a.leaflet-popup-close-button { position: absolute; top: 0; right: 0; border: none; text-align: center; width: 24px; height: 24px; font: 16px/24px Tahoma, Verdana, sans-serif; color: #757575; text-decoration: none; background: transparent; } .leaflet-container a.leaflet-popup-close-button:hover, .leaflet-container a.leaflet-popup-close-button:focus { color: #585858; } .leaflet-popup-scrolled { overflow: auto; } .leaflet-oldie .leaflet-popup-content-wrapper { -ms-zoom: 1; } .leaflet-oldie .leaflet-popup-tip { width: 24px; margin: 0 auto; -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)"; filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678); } .leaflet-oldie .leaflet-control-zoom, .leaflet-oldie .leaflet-control-layers, .leaflet-oldie .leaflet-popup-content-wrapper, .leaflet-oldie .leaflet-popup-tip { border: 1px solid #999; } .leaflet-div-icon { background: #fff; border: 1px solid #666; } .leaflet-tooltip { position: absolute; padding: 6px; background-color: #fff; border: 1px solid #fff; border-radius: 3px; color: #222; white-space: nowrap; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; pointer-events: none; box-shadow: 0 1px 3px rgba(0,0,0,0.4); } .leaflet-tooltip.leaflet-interactive { cursor: pointer; pointer-events: auto; } .leaflet-tooltip-top:before, .leaflet-tooltip-bottom:before, .leaflet-tooltip-left:before, .leaflet-tooltip-right:before { position: absolute; pointer-events: none; border: 6px solid transparent; background: transparent; content: ""; } .leaflet-tooltip-bottom { margin-top: 6px; } .leaflet-tooltip-top { margin-top: -6px; } .leaflet-tooltip-bottom:before, .leaflet-tooltip-top:before { left: 50%; margin-left: -6px; } .leaflet-tooltip-top:before { bottom: 0; margin-bottom: -12px; border-top-color: #fff; } .leaflet-tooltip-bottom:before { top: 0; margin-top: -12px; margin-left: -6px; border-bottom-color: #fff; } .leaflet-tooltip-left { margin-left: -6px; } .leaflet-tooltip-right { margin-left: 6px; } .leaflet-tooltip-left:before, .leaflet-tooltip-right:before { top: 50%; margin-top: -6px; } .leaflet-tooltip-left:before { right: 0; margin-right: -12px; border-left-color: #fff; } .leaflet-tooltip-right:before { left: 0; margin-left: -12px; border-right-color: #fff; } @media print { .leaflet-control { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+ </style>
 <style>
   :root {
     box-sizing: border-box;
@@ -68,9 +122,9 @@
     --on-leaf: #0c1f11;
     --sprout: #284a2b;
     --straw: #f5c518;
-      --sun: #f5c518;
-      --on-sun: #1b2a10;
-      --sun-soft: #4a4313;
+    --sun: #f5c518;
+    --on-sun: #1b2a10;
+    --sun-soft: #4a4313;
     --line: #2c4631;
     --map-bg: #13261a;
     --river: #2f6377;
@@ -79,19 +133,21 @@
   html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
   body { background: var(--paper); color: var(--ink); margin: 0; }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-
+ 
   /* Plowed-row band under the hero */
   .furrows {
     height: 28px;
     background: repeating-linear-gradient(100deg, var(--field) 0 14px, var(--sun) 14px 20px);
   }
-
+ 
   :focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; box-shadow: 0 0 0 6px var(--sun); }
   button, select, input, a.btn { min-height: 44px; }
   .leaflet-bar a { min-height: 0; }
   .topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 1100; }
   .leaflet-touch .leaflet-bar a { width: 38px; height: 38px; line-height: 38px; }
-
+  .navscroll { scrollbar-width: none; }
+  .navscroll::-webkit-scrollbar { display: none; }
+ 
   /* Map */
   #map { background: var(--map-bg); font-family: inherit; }
   .river { stroke: var(--river); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; fill: none; }
@@ -122,7 +178,22 @@
   .leaflet-control-attribution { font-size: 11px; }
   .leaflet-tooltip { background: var(--card); color: var(--ink); border-color: var(--line); font-weight: 600; }
   .leaflet-tooltip-top:before { border-top-color: var(--card); }
-
+ 
+  /* Menu board: dotted leaders between course and dish, like a printed farmhouse menu */
+  .leader { display: flex; align-items: baseline; gap: .5rem; }
+  .leader::after { content: ""; order: 1; flex: 1; border-bottom: 2px dotted var(--line); transform: translateY(-4px); min-width: 1rem; }
+  .leader > .dish { order: 2; text-align: right; }
+  .menu-card { background-image: linear-gradient(var(--sun), var(--sun)); background-size: 100% 6px; background-repeat: no-repeat; }
+ 
+  /* Numbered steps inside dialogs and guides */
+  .steps { counter-reset: s; }
+  .steps > li { counter-increment: s; position: relative; padding-left: 2.4rem; }
+  .steps > li::before {
+    content: counter(s); position: absolute; left: 0; top: -.1rem;
+    width: 1.7rem; height: 1.7rem; border-radius: 50%; display: grid; place-items: center;
+    background: var(--leaf); color: var(--on-leaf); font-weight: 700; font-size: .85rem;
+  }
+ 
   dialog::backdrop { background: rgba(8, 28, 14, .6); }
   dialog[open] { animation: rise .18s ease-out; }
   @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
@@ -150,14 +221,18 @@
 </style>
 </head>
 <body class="font-sans antialiased">
-
+ 
 <div class="topbar bg-field text-onfield border-b border-sun/40">
-  <div class="mx-auto max-w-7xl px-3 sm:px-8 py-1.5 flex flex-wrap items-center justify-between gap-x-1">
-    <a href="#top" class="btn inline-flex items-center font-display text-[15px] sm:text-lg text-sun whitespace-nowrap">Huntsville Fresh</a>
-    <nav class="flex items-center gap-1 sm:gap-2 text-sm font-semibold" aria-label="Page">
-      <a href="#find" class="btn inline-flex items-center px-1.5 sm:px-3 underline underline-offset-4">Places</a>
-      <a href="#produce" class="btn inline-flex items-center px-1.5 sm:px-3 underline underline-offset-4">Benefits</a>
-      <button id="themeBtn" class="rounded-full bg-sun text-onsun px-3 sm:px-4 ml-1 cursor-pointer whitespace-nowrap" aria-pressed="false"></button>
+  <div class="mx-auto max-w-7xl px-3 sm:px-8 py-1.5 flex flex-wrap items-center justify-between gap-x-2">
+    <a href="#top" class="btn order-1 inline-flex items-center font-display text-[15px] sm:text-lg text-sun whitespace-nowrap">Huntsville Fresh</a>
+    <button id="themeBtn" class="order-2 lg:order-3 rounded-full bg-sun text-onsun px-3 sm:px-4 cursor-pointer whitespace-nowrap text-sm font-semibold" aria-pressed="false"></button>
+    <nav class="navscroll order-3 lg:order-2 w-full lg:w-auto flex items-center gap-1 overflow-x-auto text-sm font-semibold -mx-1 lg:mx-0" aria-label="Page">
+      <a href="#find" class="btn shrink-0 inline-flex items-center px-2 lg:px-3 underline underline-offset-4">Places</a>
+      <a href="#produce" class="btn shrink-0 inline-flex items-center px-2 lg:px-3 underline underline-offset-4">Benefits</a>
+      <a href="#menus" class="btn shrink-0 inline-flex items-center px-2 lg:px-3 underline underline-offset-4">Fall menus</a>
+      <a href="#recipes" class="btn shrink-0 inline-flex items-center px-2 lg:px-3 underline underline-offset-4">Recipes</a>
+      <a href="#grow" class="btn shrink-0 inline-flex items-center px-2 lg:px-3 underline underline-offset-4">Grow kale</a>
+      <a href="#group" class="btn shrink-0 inline-flex items-center px-2 lg:px-3 underline underline-offset-4">Garden groups</a>
     </nav>
   </div>
 </div>
@@ -168,6 +243,7 @@
       <p class="mt-6 max-w-xl text-lg leading-relaxed" id="heroSub"></p>
       <div class="mt-7 flex flex-wrap gap-3">
         <a href="#find" class="btn inline-flex items-center rounded-full bg-sun text-onsun font-bold px-5 py-2.5">Find a market or farm</a>
+        <a href="#menus" class="btn inline-flex items-center rounded-full border-2 border-sun text-onfield font-semibold px-5 py-2.5">Plan a fall menu</a>
         <a href="#produce" class="btn inline-flex items-center rounded-full border-2 border-sun text-onfield font-semibold px-5 py-2.5">See what's good for you</a>
       </div>
     </div>
@@ -179,12 +255,12 @@
   </div>
   <div class="furrows" aria-hidden="true"></div>
 </header>
-
+ 
 <main>
-  <section id="find" class="mx-auto max-w-7xl px-4 sm:px-8 pt-10 sm:pt-12 scroll-mt-14">
+  <section id="find" class="mx-auto max-w-7xl px-4 sm:px-8 pt-10 sm:pt-12 scroll-mt-28 lg:scroll-mt-14">
     <h2 class="font-display text-3xl sm:text-4xl border-l-8 border-sun pl-3">Find a market or farm</h2>
     <p class="mt-2 text-muted max-w-2xl">Pick a place from the list or the map. Hours come straight from the listings, and many places are seasonal, so call ahead before a long drive.</p>
-
+ 
     <div class="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]">
       <div>
         <div class="rounded-xl bg-card border border-line p-4 grid gap-3">
@@ -204,8 +280,8 @@
         <p class="mt-4 text-sm text-muted" id="count" aria-live="polite"></p>
         <div id="list" class="mt-3 grid gap-3"></div>
       </div>
-
-      <div class="lg:sticky lg:top-16 lg:self-start order-first lg:order-none scroll-mt-16" id="mapWrap">
+ 
+      <div class="lg:sticky lg:top-16 lg:self-start order-first lg:order-none scroll-mt-28 lg:scroll-mt-16" id="mapWrap">
         <div class="rounded-xl overflow-hidden border border-line bg-card">
           <div class="flex flex-wrap items-center justify-between gap-2 px-3 py-2 border-b border-line">
             <div class="flex items-center gap-4 text-sm">
@@ -223,23 +299,124 @@
       </div>
     </div>
   </section>
-
-  <section id="produce" class="mx-auto max-w-7xl px-4 sm:px-8 pt-14 pb-16 scroll-mt-14">
+ 
+  <section id="produce" class="mx-auto max-w-7xl px-4 sm:px-8 pt-14 pb-16 scroll-mt-28 lg:scroll-mt-14">
     <h2 class="font-display text-3xl sm:text-4xl border-l-8 border-sun pl-3">What's good for you, and when</h2>
     <p class="mt-2 text-muted max-w-2xl">The dark bars with a check-style underline show the usual North Alabama harvest months. Open any card for the health benefits, a picking tip, and the places that grow it.</p>
     <div id="produceGrid" class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3"></div>
   </section>
+ 
+  <!-- ============ Fall menus ============ -->
+  <section id="menus" class="bg-field text-onfield scroll-mt-28 lg:scroll-mt-14">
+    <div class="furrows" aria-hidden="true"></div>
+    <div class="mx-auto max-w-7xl px-4 sm:px-8 pt-12 pb-14">
+      <div class="grid gap-6 lg:grid-cols-[1fr_1.2fr] lg:items-end">
+        <h2 class="font-display text-4xl sm:text-6xl leading-[1.02] text-sun">The farm-fresh fall menu</h2>
+        <p class="text-lg leading-relaxed max-w-xl">Six menus built from what North Alabama grows this time of year: pumpkin, sweet potatoes, kale and greens, apples, and the last muscadines. Each one comes with a game plan and where to shop. Open a menu, then tap any dish for the full recipe.</p>
+      </div>
+      <div id="menuGrid" class="mt-9 grid gap-4 md:grid-cols-2 lg:grid-cols-3"></div>
+    </div>
+  </section>
+ 
+  <!-- ============ Recipes ============ -->
+  <section id="recipes" class="mx-auto max-w-7xl px-4 sm:px-8 pt-14 pb-6 scroll-mt-28 lg:scroll-mt-14">
+    <h2 class="font-display text-3xl sm:text-4xl border-l-8 border-sun pl-3">Pumpkin, sweet potato and kale recipes</h2>
+    <p class="mt-2 text-muted max-w-2xl">Raw, baked, or lightly cooked. Each way of cooking has something going for it: raw keeps all the vitamin C, roasting brings out sweetness, and a quick steam or sauté keeps vegetables bright with little effort.</p>
+ 
+    <div class="mt-6 rounded-xl bg-card border border-line p-4 grid gap-3 sm:flex sm:flex-wrap sm:items-end sm:gap-6">
+      <fieldset>
+        <legend class="text-sm font-semibold mb-1">How it's cooked</legend>
+        <div class="flex flex-wrap rounded-lg border border-line overflow-hidden" id="methodBtns"></div>
+      </fieldset>
+      <fieldset>
+        <legend class="text-sm font-semibold mb-1">Main ingredient</legend>
+        <div class="flex flex-wrap rounded-lg border border-line overflow-hidden" id="mainBtns"></div>
+      </fieldset>
+    </div>
+    <p class="mt-4 text-sm text-muted" id="recipeCount" aria-live="polite"></p>
+    <div id="recipeGrid" class="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3"></div>
+  </section>
+ 
+  <!-- ============ Grow kale ============ -->
+  <section id="grow" class="mx-auto max-w-7xl px-4 sm:px-8 pt-14 pb-6 scroll-mt-28 lg:scroll-mt-14">
+    <h2 class="font-display text-3xl sm:text-4xl border-l-8 border-sun pl-3">Grow your own kale, starting with one plant</h2>
+    <p class="mt-2 text-muted max-w-2xl">Kale is the easiest green to grow through a North Alabama fall and winter. Skip the seeds: a starter plant from the garden center at Home Depot or Lowe's gets you picking leaves in a few weeks.</p>
+ 
+    <div class="mt-8 grid gap-8 lg:grid-cols-[1fr_1.15fr]">
+      <div>
+        <h3 class="font-display text-2xl">Why kale earns a spot</h3>
+        <ul class="mt-4 grid gap-4" id="kaleBenefits"></ul>
+        <p class="mt-4 text-sm text-muted">Taking a blood thinner such as warfarin? Vitamin K affects how it works. You don't have to avoid kale, but keep the amount you eat steady from week to week and check with your doctor or pharmacist.</p>
+ 
+        <h3 class="mt-8 font-display text-2xl">Which kale to buy</h3>
+        <div class="mt-3 grid gap-3" id="kaleTypes"></div>
+      </div>
+ 
+      <div class="rounded-2xl bg-card border-2 border-line p-5 sm:p-6">
+        <h3 class="font-display text-2xl">From the garden center to your plate</h3>
+        <p class="mt-1 text-muted">Six steps, about 30 minutes of work on day one.</p>
+        <ol class="steps mt-5 grid gap-5" id="kaleSteps"></ol>
+      </div>
+    </div>
+ 
+    <div class="mt-10 rounded-2xl bg-sun text-onsun p-6 sm:p-8">
+      <h3 class="font-display text-3xl sm:text-5xl leading-[1.05]">One pot. Three plants. Ten minutes a week.</h3>
+      <p class="mt-3 max-w-2xl text-lg">That's the whole plan for your first season. Small is how you finish what you start, and kale rewards it: three plants give one person a big handful of leaves every week from fall into spring.</p>
+      <div class="mt-6 grid gap-4 md:grid-cols-3" id="simpleRules"></div>
+    </div>
+ 
+    <div class="mt-10 grid gap-6 lg:grid-cols-2">
+      <div>
+        <h3 class="font-display text-2xl">Your weekly ten minutes</h3>
+        <div class="mt-3 grid gap-2" id="weekly"></div>
+      </div>
+      <div>
+        <h3 class="font-display text-2xl">When kale is going well, add one more</h3>
+        <p class="mt-2 text-muted">Same pot size, same care. Pick one, not all four.</p>
+        <div class="mt-3 grid gap-2 sm:grid-cols-2" id="nextPlants"></div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ============ Garden group ============ -->
+  <section id="group" class="mx-auto max-w-7xl px-4 sm:px-8 pt-14 pb-16 scroll-mt-28 lg:scroll-mt-14">
+    <h2 class="font-display text-3xl sm:text-4xl border-l-8 border-sun pl-3">For a small group that gardens and eats fresh</h2>
+    <p class="mt-2 text-muted max-w-2xl">Four to eight people, a few pots each, and a shared table once a month. A group makes gardening cheaper, cuts down on waste, and keeps everyone going when the novelty wears off.</p>
+ 
+    <div class="mt-6 grid gap-3 md:grid-cols-3" id="groupIdeas"></div>
+ 
+    <div class="mt-10 grid gap-8 lg:grid-cols-2">
+      <div class="rounded-2xl bg-card border-2 border-line p-5 sm:p-6">
+        <h3 class="font-display text-2xl">Your first get-together</h3>
+        <p class="mt-1 text-muted">One hour, at someone's kitchen table or porch.</p>
+        <ol class="steps mt-5 grid gap-4" id="firstMeeting"></ol>
+      </div>
+      <div>
+        <h3 class="font-display text-2xl">Jobs that rotate each month</h3>
+        <p class="mt-1 text-muted">Nobody does everything. Pass these around so no one burns out.</p>
+        <div class="mt-4 grid gap-3 sm:grid-cols-2" id="roles"></div>
+      </div>
+    </div>
+ 
+    <h3 class="mt-12 font-display text-2xl">A fall season for the group</h3>
+    <div class="mt-4 grid gap-3 md:grid-cols-2 lg:grid-cols-4" id="groupCalendar"></div>
+ 
+    <div class="mt-12 rounded-2xl border-2 border-dashed border-line p-5 sm:p-6">
+      <h3 class="font-display text-2xl" id="tripTitle"></h3>
+      <p class="mt-1 text-muted">Carpool, split the shopping list from your next menu, and bring a cooler. These listings are open this month; tap one for directions.</p>
+      <div class="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3" id="groupTrips"></div>
+    </div>
+  </section>
 </main>
-
+ 
 <footer class="border-t border-line">
   <div class="mx-auto max-w-7xl px-5 sm:px-8 py-8 text-sm text-muted grid gap-2">
     <p>Places, addresses, hours, and produce come from the Huntsville farms and markets list. Harvest months are typical for North Alabama and shift with the weather.</p>
-    <p>Nutrition notes are general information, not medical advice.</p>
+    <p>Nutrition notes are general information, not medical advice. Garden timing is typical for North Alabama; check the plant tag and your local forecast.</p>
   </div>
 </footer>
-
-<dialog id="dlg" class="m-auto w-[min(94vw,34rem)] max-h-[88vh] rounded-2xl border-t-8 border-t-sun bg-card text-ink p-0 border border-line" aria-labelledby="dlgTitle"></dialog>
-
+ 
+<dialog id="dlg" class="m-auto w-[min(94vw,36rem)] max-h-[88vh] rounded-2xl border-t-8 border-t-sun bg-card text-ink p-0 border border-line" aria-labelledby="dlgTitle"></dialog>
 <script>
 /* ------------------------------------------------------------------
    The directory is built from this CSV (the attached file, unchanged).
@@ -259,7 +436,7 @@ E & J Farms,"63 Parks Chapel Rd, Lacey's Spring, AL","Mondays - Saturdays 8:38 A
 Gin House Branch Farm,"1449 S. Bethel Road, Decatur, AL","Daily, daylight to dark","Blueberries, muscadines",Pick Your Own
 Brown's Orchards and Vineyards,"1041 County Road 38, Florence, AL",Daily,"Peaches, muscadine grapes",Pick Your Own
 Isom's Orchard,"24012 US Highway 72, Athens, AL",Fridays & Saturdays 7:30 AM - 12:00 PM (U-Pick hours),"Peaches, grapes",Pick Your Own`;
-
+ 
 /* Approximate pin positions, keyed by the Name column. */
 const GEO = {
   "Greene Street Farmers Market": [34.7298, -86.5838],
@@ -277,7 +454,7 @@ const GEO = {
   "Brown's Orchards and Vineyards": [34.8850, -87.5850],
   "Isom's Orchard": [34.7850, -86.9250]
 };
-
+ 
 /* Fruit and vegetable guide. months: 0 = January. */
 const PRODUCE = [
   { id: "strawberries", name: "Strawberries", color: "#d93a3a", months: [3,4,5], season: "April to June",
@@ -361,6 +538,14 @@ const PRODUCE = [
       "About 80 percent water. Try them frozen on a hot day."
     ],
     tip: "Look for green, flexible stems. Store unwashed in the fridge and rinse just before eating." },
+  { id: "pumpkin", name: "Pumpkin", color: "#e07b24", months: [8,9,10], season: "September to November", staple: true,
+    headline: "Most of a day's vitamin A in a cup, for about 50 calories.",
+    benefits: [
+      "Beta-carotene gives pumpkin its orange color. Your body turns it into vitamin A for eyes, skin, and immune health.",
+      "A cup of cooked pumpkin has more potassium than a small banana.",
+      "Don't toss the seeds. They're a good source of magnesium, zinc, and plant protein."
+    ],
+    tip: "Cook with small pie or sugar pumpkins, not carving pumpkins. A good one feels heavy for its size and has a dry, firm stem. <a href=\"#recipes\" class=\"font-semibold underline\">See pumpkin recipes</a>" },
   { id: "sweetpotatoes", name: "Sweet potatoes", color: "#d2691e", months: [8,9,10], season: "September to November", staple: true,
     headline: "One of the best sources of beta-carotene you can buy.",
     benefits: [
@@ -369,6 +554,14 @@ const PRODUCE = [
       "Naturally sweet, so they need little added sugar."
     ],
     tip: "Store in a cool, dark cupboard, not the refrigerator." },
+  { id: "kale", name: "Kale", color: "#2f6b3c", months: [9,10,11,0,1,2,3], season: "October to April", staple: true,
+    headline: "A cup of raw kale covers more than half a day's vitamin K.",
+    benefits: [
+      "Also supplies vitamin C and beta-carotene, plus lutein and zeaxanthin for eye health.",
+      "Low in oxalate, so your body absorbs the calcium in kale more easily than the calcium in spinach.",
+      "About 10 calories a cup raw, with fiber to help you feel full."
+    ],
+    tip: "One of the easiest things to grow yourself from a garden-center starter plant. <a href=\"#grow\" class=\"font-semibold underline\">See the growing guide</a>" },
   { id: "collards", name: "Collard greens", color: "#2e6b3a", months: [9,10,11,0,1,2], season: "October to March", staple: true,
     headline: "A Southern staple packed with vitamin K.",
     benefits: [
@@ -403,7 +596,7 @@ const PRODUCE = [
     tip: "Eat it the day you buy it. The sugars begin turning to starch as soon as it's picked." }
 ];
 const P_BY_ID = Object.fromEntries(PRODUCE.map(p => [p.id, p]));
-
+ 
 /* ---------- CSV parsing ---------- */
 function parseCSV(text) {
   const rows = []; let row = [], cell = "", inQ = false;
@@ -426,11 +619,11 @@ function parseCSV(text) {
   const head = rows.shift().map(h => h.trim());
   return rows.map(r => Object.fromEntries(head.map((h, i) => [h, (r[i] || "").trim()])));
 }
-
+ 
 const DAY_NAMES = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const MON3 = MONTH_NAMES.map(m => m.slice(0, 3).toLowerCase());
-
+ 
 function parseDays(t) {
   const low = t.toLowerCase(), set = new Set();
   if (/daily/.test(low)) return new Set([0, 1, 2, 3, 4, 5, 6]);
@@ -455,7 +648,7 @@ function parseMonths(t) {
 }
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
-
+ 
 const PLACES = parseCSV(CSV).map((r, i) => {
   const items = r["Type of Produce"].split(",").map(s => s.trim()).filter(Boolean).map(label => {
     const p = PRODUCE.find(p => p.match && p.match.test(label.toLowerCase()));
@@ -470,9 +663,9 @@ const PLACES = parseCSV(CSV).map((r, i) => {
     hay: [r.Name, r.Location, r.Times, r["Type of Produce"], r.Category].join(" ").toLowerCase()
   };
 });
-
+ 
 const NOW = new Date(), THIS_MONTH = NOW.getMonth(), TODAY = NOW.getDay();
-
+ 
 /* ---------- Small pieces of UI ---------- */
 function dot(color, size = 12) {
   return `<span aria-hidden="true" class="inline-block rounded-full shrink-0" style="width:${size}px;height:${size}px;background:${color};box-shadow:0 0 0 1.5px rgba(255,255,255,.85)"></span>`;
@@ -498,23 +691,23 @@ function seasonStrip(p, big) {
   }).join("");
   return `<div class="flex gap-[3px]" role="img" aria-label="In season ${p.season}">${cells}</div>`;
 }
-
+ 
 /* ---------- Hero ---------- */
 const nMarkets = PLACES.filter(p => !p.isPick).length, nPick = PLACES.length - nMarkets;
 document.getElementById("heroSub").textContent =
-  `${nMarkets} farmers markets and ${nPick} pick-your-own farms across North Alabama: when they're open, what they grow, and why it's good for you.`;
+  `${nMarkets} farmers markets and ${nPick} pick-your-own farms across North Alabama: when they're open, what they grow, and why it's good for you. Plus fall menus, recipes, and an easy start on growing your own.`;
 document.getElementById("seasonTitle").textContent = `In season in ${MONTH_NAMES[THIS_MONTH]}`;
 const inSeason = PRODUCE.filter(p => p.months.includes(THIS_MONTH));
 document.getElementById("seasonNow").innerHTML = inSeason.length
   ? inSeason.map(p => `<button data-produce="${p.id}" class="inline-flex items-center gap-2 rounded-full bg-onfield/10 border border-sun/70 px-3 py-1.5 font-semibold cursor-pointer hover:bg-onfield/20">${dot(p.color)}${p.name}</button>`).join("")
   : `<p class="text-sm">The fields are resting. Markets with year-round hours still carry stored and greenhouse produce.</p>`;
-
+ 
 /* ---------- Map ---------- */
 const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const map = L.map("map", { zoomSnap: 0.25, minZoom: 8, maxZoom: 15, scrollWheelZoom: false, attributionControl: true });
 map.zoomControl.setPosition("bottomleft");
 map.attributionControl.setPrefix('<a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a>');
-
+ 
 const RIVER = [[34.33,-86.28],[34.40,-86.33],[34.47,-86.39],[34.53,-86.46],[34.573,-86.565],[34.578,-86.66],[34.585,-86.74],[34.60,-86.86],[34.615,-86.98],[34.68,-87.10],[34.75,-87.25],[34.80,-87.38],[34.805,-87.52],[34.80,-87.625],[34.785,-87.69],[34.80,-87.85]];
 const ROADS = [
   [[35.05,-86.89],[34.99,-86.88],[34.80,-86.935],[34.655,-86.93],[34.52,-86.90],[34.37,-86.895],[34.22,-86.88]],             // I-65
@@ -523,7 +716,7 @@ const ROADS = [
   [[35.05,-86.57],[34.93,-86.57],[34.80,-86.585],[34.73,-86.59],[34.573,-86.565],[34.52,-86.60],[34.40,-86.55],[34.25,-86.50]]      // US-231
 ];
 const TOWNS = [["Huntsville",34.705,-86.555],["Madison",34.695,-86.765],["Athens",34.815,-86.985],["Decatur",34.585,-87.03],["Florence",34.83,-87.70],["Hazel Green",34.925,-86.60],["Falkville",34.355,-86.93],["Lacey's Spring",34.535,-86.575],["Hartselle",34.44,-86.955]];
-
+ 
 L.polyline([[34.992,-88.2],[34.992,-86.0]], { className: "stateline", interactive: false }).addTo(map);
 ROADS.forEach(r => L.polyline(r, { className: "road", interactive: false, smoothFactor: 0 }).addTo(map));
 L.polyline(RIVER, { className: "river", interactive: false, smoothFactor: 0 }).addTo(map);
@@ -531,7 +724,7 @@ const label = (txt, lat, lng, cls) => L.marker([lat, lng], { interactive: false,
 TOWNS.forEach(t => label(t[0], t[1], t[2], "town-label"));
 label("Tennessee River", 34.715, -87.26, "water-label");
 label("Tennessee", 35.02, -87.2, "town-label");
-
+ 
 function popupHtml(p) {
   return `<div style="min-width:min(220px,60vw);max-width:270px">
     <p class="text-xs font-semibold text-muted">${esc(p.category)}${p.town ? " in " + esc(p.town) : ""}</p>
@@ -560,24 +753,24 @@ map.fitBounds(ALL_BOUNDS);
 map.setMaxBounds(ALL_BOUNDS.pad(0.6));
 document.getElementById("viewAll").onclick = () => { map.closePopup(); map.fitBounds(ALL_BOUNDS, { animate: !reduceMotion }); };
 document.getElementById("viewHsv").onclick = () => { map.closePopup(); map.fitBounds(HSV_BOUNDS, { animate: !reduceMotion }); };
-
+ 
 /* ---------- Directory list ---------- */
 let active = null;
 const state = { q: "", cat: "All", day: "any" };
 const listEl = document.getElementById("list"), countEl = document.getElementById("count");
-
+ 
 const cats = ["All", ...new Set(PLACES.map(p => p.category))];
 const catBtns = document.getElementById("catBtns");
 function drawCats() {
   catBtns.innerHTML = cats.map(c => `<button data-cat="${esc(c)}" aria-pressed="${state.cat === c}" class="flex-1 px-3 py-2 text-sm font-semibold cursor-pointer ${state.cat === c ? "bg-leaf text-onleaf underline underline-offset-4 decoration-2" : "bg-paper text-ink"}">${esc(c)}</button>`).join("");
 }
 catBtns.addEventListener("click", e => { const b = e.target.closest("[data-cat]"); if (b) { state.cat = b.dataset.cat; drawCats(); drawList(); } });
-
+ 
 const daySel = document.getElementById("day");
 daySel.innerHTML = `<option value="any">Any day</option>` + [...Array(7)].map((_, k) => { const d = (TODAY + k) % 7; return `<option value="${d}">${DAY_NAMES[d]}${k === 0 ? " (today)" : ""}</option>`; }).join("");
 daySel.onchange = () => { state.day = daySel.value; drawList(); };
 document.getElementById("q").oninput = e => { state.q = e.target.value.trim().toLowerCase(); drawList(); };
-
+ 
 function visiblePlaces() {
   return PLACES.filter(p =>
     (state.cat === "All" || p.category === state.cat) &&
@@ -627,8 +820,8 @@ function focusPlace(i) {
   map.setView(p.latlng, Math.max(map.getZoom(), 11), { animate: !reduceMotion });
   setTimeout(() => m.openPopup(), reduceMotion ? 0 : 450);
 }
-
-/* ---------- Produce guide + popup ---------- */
+ 
+/* ---------- Produce guide ---------- */
 const placesFor = id => PLACES.filter(p => p.items.some(it => it.id === id));
 document.getElementById("produceGrid").innerHTML = PRODUCE.map(p => {
   const n = placesFor(p.id).length;
@@ -639,17 +832,354 @@ document.getElementById("produceGrid").innerHTML = PRODUCE.map(p => {
     <span class="block mt-2 text-sm font-semibold text-leaf">${n ? `Grown at ${n} listed ${n === 1 ? "farm" : "farms"}` : "Look for it at the farmers markets"}</span>
   </button>`;
 }).join("");
-
+ 
+/* ==================================================================
+   Fall recipes: pumpkin, sweet potato, and kale
+   method: raw | baked | light
+   ================================================================== */
+const METHODS = { raw: "Raw & no-cook", baked: "Baked & roasted", light: "Lightly cooked" };
+const MAINS = {
+  pumpkin: { name: "Pumpkin", color: "#e07b24", produce: "pumpkin" },
+  sweetpotato: { name: "Sweet potato", color: "#b5562a", produce: "sweetpotatoes" },
+  kale: { name: "Kale", color: "#2f6b3c", produce: "kale" }
+};
+const RECIPES = [
+  /* ----- Raw & no-cook ----- */
+  { id: "pumpkin-apple-salad", name: "Shaved pumpkin and apple salad", main: "pumpkin", method: "raw", time: "15 min", serves: "4",
+    blurb: "Thin ribbons of raw pumpkin soften in a lemony dressing. Crisp, sweet, and a surprise to most people.",
+    ingredients: ["2 cups peeled raw pie pumpkin (or butternut squash), shaved into ribbons with a vegetable peeler", "1 crisp apple, thinly sliced", "2 cups baby kale or arugula", "1/4 cup toasted pumpkin seeds", "2 tbsp lemon juice", "2 tbsp olive oil", "1 tsp honey", "Pinch of salt and pepper"],
+    steps: ["Halve the pumpkin, scoop out the seeds (save them for toasting), and cut away the skin with a sharp knife.", "Run a vegetable peeler down the flesh to make long ribbons.", "Whisk the lemon juice, olive oil, honey, salt, and pepper in a large bowl.", "Toss the pumpkin in the dressing and let it sit 10 minutes to soften.", "Add the apple, greens, and seeds, toss, and serve."],
+    why: "Raw pumpkin keeps all of its vitamin C, which heat breaks down. The olive oil helps your body absorb the beta-carotene.",
+    tip: "Use a small sugar or pie pumpkin. Carving pumpkins are stringy and bland." },
+  { id: "pumpkin-carrot-ginger", name: "Grated pumpkin, carrot and ginger salad", main: "pumpkin", method: "raw", time: "10 min", serves: "4",
+    blurb: "Two orange vegetables, a bright ginger dressing, and no stove at all.",
+    ingredients: ["1 1/2 cups grated raw pumpkin", "1 1/2 cups grated carrot", "1 tbsp grated fresh ginger", "1/4 cup raisins or chopped dates", "2 tbsp orange juice", "1 tbsp rice vinegar or lemon juice", "1 tbsp olive or sesame oil", "Pinch of salt"],
+    steps: ["Grate the peeled pumpkin and the carrots on the large holes of a box grater.", "Whisk the orange juice, vinegar, oil, ginger, and salt.", "Toss everything with the raisins and chill 15 minutes before serving."],
+    why: "Pumpkin and carrots together make a big dose of beta-carotene, the building block of vitamin A.",
+    tip: "Keeps 2 days in the fridge, so it's a good packed lunch." },
+  { id: "sweet-potato-kale-slaw", name: "Raw sweet potato and kale slaw", main: "sweetpotato", method: "raw", time: "15 min", serves: "4 to 6",
+    blurb: "Raw sweet potato is crisp like a carrot. With kale, apple, and a tangy dressing, it's a slaw that holds up for hours.",
+    ingredients: ["1 medium sweet potato, peeled and cut into thin matchsticks or grated", "3 cups kale, stems removed, thinly sliced", "1 apple, cut in matchsticks", "1/4 cup chopped pecans", "3 tbsp plain yogurt or mayonnaise", "1 tbsp apple cider vinegar", "1 tsp honey", "1 tsp Dijon mustard", "Salt to taste"],
+    steps: ["Rub the sliced kale with a pinch of salt for about a minute until it softens.", "Add the sweet potato and apple.", "Whisk the yogurt, vinegar, honey, mustard, and salt, then toss with the slaw.", "Top with pecans just before serving."],
+    why: "Sweet potato brings fiber and beta-carotene, and kale adds vitamin K and calcium.",
+    tip: "Raw sweet potato is safe to eat, but it's dense and starchy. Cut it thin and keep portions modest if your stomach is sensitive." },
+  { id: "sweet-potato-coins", name: "Sweet potato coins with peanut-lime dip", main: "sweetpotato", method: "raw", time: "10 min", serves: "4 as a snack",
+    blurb: "Paper-thin raw sweet potato with a salty, tangy dip. A crunchy stand-in for chips.",
+    ingredients: ["1 small sweet potato, peeled and sliced into very thin coins", "1/4 cup peanut butter", "2 tbsp lime juice", "1 tbsp soy sauce", "1 tsp honey", "2 to 3 tbsp warm water", "Pinch of chili flakes"],
+    steps: ["Slice the sweet potato as thin as you can with a sharp knife or a mandoline (use the hand guard).", "Soak the slices in ice water for 10 minutes for extra crunch, then pat dry.", "Whisk the peanut butter, lime juice, soy sauce, honey, and chili flakes, adding warm water until it's dippable."],
+    why: "A fiber-rich snack, and the peanut butter adds protein and healthy fat to keep you full.",
+    tip: "The same dip works with apple slices, bell pepper strips, or kale leaves." },
+  { id: "massaged-kale", name: "Massaged kale salad with apple and pepitas", main: "kale", method: "raw", time: "10 min", serves: "4",
+    blurb: "Two minutes of rubbing turns tough kale tender. The best way to win over kale skeptics.",
+    ingredients: ["1 bunch kale (about 6 cups chopped), stems removed", "1 tbsp olive oil", "1 tbsp lemon juice", "Pinch of salt", "1 apple, diced", "1/4 cup dried cranberries", "1/4 cup pumpkin seeds", "1 oz shaved Parmesan or crumbled feta (optional)"],
+    steps: ["Tear the leaves into bite-size pieces in a big bowl.", "Add the oil, lemon juice, and salt.", "Squeeze and rub the kale with your hands for 2 to 3 minutes, until it turns darker and shrinks by about a third.", "Toss in the apple, cranberries, seeds, and cheese."],
+    why: "Massaging breaks down the tough fibers, so raw kale is tender and keeps all of its vitamin C.",
+    tip: "Unlike lettuce, dressed kale keeps a day or two, which makes it perfect for a potluck." },
+  { id: "pumpkin-overnight-oats", name: "Pumpkin pie overnight oats", main: "pumpkin", method: "raw", time: "5 min + overnight", serves: "2",
+    blurb: "Stir it in a jar at night, eat it cold (or warmed) in the morning. Tastes like pie, eats like breakfast.",
+    ingredients: ["1 cup rolled oats", "1/2 cup pumpkin puree (canned or homemade)", "1 cup milk or unsweetened plant milk", "1/4 cup plain Greek yogurt", "1 tbsp maple syrup", "1 tsp pumpkin pie spice", "1 tbsp chia seeds (optional)", "Chopped pecans for topping"],
+    steps: ["Stir everything except the pecans in a jar or bowl.", "Cover and refrigerate overnight, or at least 4 hours.", "Top with pecans and eat cold, or microwave for a minute."],
+    why: "Oats bring soluble fiber, pumpkin brings vitamin A, and yogurt adds protein that carries you to lunch.",
+    tip: "Freeze leftover puree in 1/2-cup portions in a muffin tin, then pop them into a freezer bag." },
+ 
+  /* ----- Baked & roasted ----- */
+  { id: "sweet-potato-wedges", name: "Roasted sweet potato wedges", main: "sweetpotato", method: "baked", time: "35 min", serves: "4",
+    blurb: "Smoky, caramelized edges and soft centers. Skin on, no peeling.",
+    ingredients: ["2 large sweet potatoes, scrubbed, skin on", "2 tbsp olive oil", "1 tsp smoked paprika", "1/2 tsp garlic powder", "1/2 tsp salt"],
+    steps: ["Heat the oven to 425°F.", "Cut the sweet potatoes into wedges about 1/2 inch thick.", "Toss with the oil and seasonings.", "Spread in a single layer with space between pieces.", "Roast 25 to 30 minutes, flipping halfway, until browned at the edges."],
+    why: "Leaving the skin on adds fiber and potassium.",
+    tip: "A crowded pan steams instead of roasts. Use two pans if you need to." },
+  { id: "sweet-potato-bar", name: "Baked sweet potato bar", main: "sweetpotato", method: "baked", time: "1 hr, mostly hands-off", serves: "6 to 8",
+    blurb: "Bake a pan of potatoes, set out toppings, and let everyone build their own. Made for groups.",
+    ingredients: ["1 medium sweet potato per person", "Toppings: black beans, sautéed kale, plain Greek yogurt, salsa, shredded cheese, chopped pecans, cinnamon, honey, sliced green onions"],
+    steps: ["Heat the oven to 400°F and line a baking sheet with foil or parchment.", "Scrub the potatoes and poke each one a few times with a fork.", "Bake 45 to 60 minutes, until a knife slides in with no resistance.", "Split them open and fluff the insides with a fork.", "Set the toppings out in bowls and let everyone build their own."],
+    why: "A medium baked sweet potato gives more than a full day's vitamin A and about 4 grams of fiber.",
+    tip: "Line the pan. The natural sugars drip out and turn to sticky caramel." },
+  { id: "roasted-pumpkin", name: "Roasted pumpkin with sage and garlic", main: "pumpkin", method: "baked", time: "40 min", serves: "4",
+    blurb: "Sweet, savory cubes that go with everything from rice bowls to pasta.",
+    ingredients: ["1 small pie pumpkin (about 2 lb), peeled, seeded, cut in 1-inch cubes", "2 tbsp olive oil", "3 garlic cloves, smashed", "6 to 8 fresh sage leaves (or 1 tsp dried)", "Salt and pepper"],
+    steps: ["Heat the oven to 425°F.", "Toss the pumpkin with oil, garlic, sage, salt, and pepper.", "Roast 25 to 30 minutes, stirring once, until tender and browned at the edges."],
+    why: "Roasting concentrates the sweetness, and the oil helps you absorb beta-carotene.",
+    tip: "Easier peeling: microwave the whole pumpkin for 2 to 3 minutes to soften the skin first." },
+  { id: "stuffed-pumpkin", name: "Stuffed pumpkin halves with rice, kale and apple", main: "pumpkin", method: "baked", time: "50 min", serves: "4",
+    blurb: "A whole meal served in an edible bowl. Looks like a holiday, cooks like a weeknight.",
+    ingredients: ["2 small pie pumpkins, halved and seeded", "1 tbsp olive oil, plus more for brushing", "2 cups cooked brown rice or farro", "2 cups chopped kale", "1 apple, diced", "1/2 onion, diced", "1/3 cup chopped pecans", "1/4 cup crumbled feta or goat cheese (optional)", "Salt, pepper, and a pinch of cinnamon"],
+    steps: ["Heat the oven to 400°F.", "Brush the cut sides of the pumpkins with oil and roast cut side down for 30 to 35 minutes, until tender.", "Meanwhile, sauté the onion in oil for 5 minutes, then add the kale and apple for 3 more.", "Stir in the rice, pecans, and seasonings.", "Flip the pumpkins, fill them, top with cheese, and bake 10 more minutes."],
+    why: "Whole grain, greens, fruit, and nuts in one dish, with the pumpkin as the bowl.",
+    tip: "Make the filling a day ahead. On the night, it's just roast, fill, and bake." },
+  { id: "pumpkin-muffins", name: "Pumpkin oat muffins", main: "pumpkin", method: "baked", time: "35 min", serves: "12 muffins",
+    blurb: "Moist, spiced, and lightly sweet. Freeze half for busy mornings.",
+    ingredients: ["1 1/2 cups whole wheat flour", "1 cup rolled oats", "1 tsp baking soda", "1 tsp baking powder", "2 tsp pumpkin pie spice", "1/2 tsp salt", "1 1/4 cups pumpkin puree", "2 eggs", "1/2 cup maple syrup or honey", "1/3 cup oil", "1/2 cup milk"],
+    steps: ["Heat the oven to 375°F and grease or line a 12-cup muffin tin.", "Mix the flour, oats, baking soda, baking powder, spice, and salt.", "In another bowl, whisk the pumpkin, eggs, syrup, oil, and milk.", "Fold the wet into the dry just until no flour shows.", "Fill the cups about 3/4 full and bake 18 to 22 minutes, until a toothpick comes out clean."],
+    why: "Whole wheat and oats give more fiber than a bakery muffin, with much less sugar.",
+    tip: "Freeze extras in a bag and thaw one overnight on the counter." },
+  { id: "pumpkin-seeds", name: "Toasted pumpkin seeds", main: "pumpkin", method: "baked", time: "35 min", serves: "About 1 cup",
+    blurb: "The part of the pumpkin most people throw away, and the best snack in it.",
+    ingredients: ["Seeds from 1 pumpkin (about 1 cup)", "1 tsp olive oil", "1/2 tsp salt", "Optional: cinnamon, chili powder, or garlic powder"],
+    steps: ["Rinse the seeds in a colander and pull off the stringy bits.", "Pat them completely dry with a towel.", "Heat the oven to 325°F.", "Toss with oil, salt, and any seasoning, and spread thin on a baking sheet.", "Bake 20 to 30 minutes, stirring every 10, until golden and crisp."],
+    why: "Pumpkin seeds are a good source of magnesium, zinc, and plant protein.",
+    tip: "The drier the seeds go in, the crunchier they come out." },
+ 
+  /* ----- Lightly cooked ----- */
+  { id: "garlic-kale", name: "Garlicky sautéed kale", main: "kale", method: "light", time: "10 min", serves: "4",
+    blurb: "A big pile of greens becomes an easy side in five minutes.",
+    ingredients: ["1 large bunch kale, stems removed, chopped", "1 tbsp olive oil", "3 garlic cloves, sliced", "2 tbsp water or broth", "Squeeze of lemon", "Pinch of red pepper flakes and salt"],
+    steps: ["Heat the oil in a large skillet over medium heat.", "Add the garlic and pepper flakes and stir for 30 seconds.", "Add the kale and water and toss for 3 to 5 minutes, just until wilted and bright green.", "Finish with lemon and salt."],
+    why: "Brief cooking keeps the color and much of the vitamin C.",
+    tip: "Stop while it's bright green. Overcooked kale turns olive-drab and bitter." },
+  { id: "steamed-sweet-potato", name: "Steamed sweet potato with lime and chili", main: "sweetpotato", method: "light", time: "15 min", serves: "4",
+    blurb: "Gentle steaming, then a hit of lime and chili. Quick and clean.",
+    ingredients: ["2 medium sweet potatoes, peeled, 1-inch cubes", "Juice of 1 lime", "1 tbsp olive oil or butter", "Pinch of chili powder", "Salt", "Chopped cilantro or green onion"],
+    steps: ["Steam the cubes in a basket over simmering water for 10 to 12 minutes, until just tender.", "Toss with lime, oil, chili, and salt.", "Top with cilantro or green onion."],
+    why: "Steaming is one of the gentlest ways to cook, so more of the water-soluble vitamins stay in the food.",
+    tip: "Mash leftovers with a splash of orange juice for a quick next-day side." },
+  { id: "sweet-potato-skillet", name: "Sweet potato and kale breakfast skillet", main: "sweetpotato", method: "light", time: "25 min", serves: "2 to 3",
+    blurb: "One pan, eggs on top. Works for breakfast or a fast supper.",
+    ingredients: ["1 large sweet potato, 1/2-inch cubes", "1 tbsp oil", "1/2 onion, diced", "1 bell pepper, diced", "2 cups chopped kale", "4 eggs", "Salt, pepper, and smoked paprika"],
+    steps: ["Cook the sweet potato in the oil, covered, over medium heat for 8 to 10 minutes, stirring now and then.", "Add the onion and pepper and cook 4 minutes.", "Stir in the kale for 2 minutes.", "Make 4 wells, crack in the eggs, cover, and cook 4 to 6 minutes until the whites are set."],
+    why: "Eggs add protein, and sweet potato gives slow-burning energy and fiber.",
+    tip: "A splash of water under the lid helps the sweet potato cook through." },
+  { id: "pumpkin-bean-soup", name: "Pumpkin and white bean soup", main: "pumpkin", method: "light", time: "30 min", serves: "4 to 6",
+    blurb: "Creamy without cream, and hearty enough to be supper on its own.",
+    ingredients: ["1 tbsp olive oil", "1 onion, chopped", "2 garlic cloves, minced", "3 cups pumpkin cubes (or a 15-oz can of puree)", "1 can white beans, rinsed", "4 cups low-sodium vegetable broth", "1 tsp dried thyme or sage", "2 cups chopped kale", "Salt and pepper"],
+    steps: ["Soften the onion in oil for 5 minutes, then add the garlic for 1 minute.", "Add the pumpkin, beans, broth, and herbs.", "Simmer 15 to 20 minutes, until the pumpkin is tender.", "Blend or mash about half the soup for a creamy body.", "Stir in the kale for the last 2 to 3 minutes."],
+    why: "Beans add protein and fiber, so this is a full meal; pumpkin adds vitamin A and potassium.",
+    tip: "Freezes well for up to 3 months." },
+  { id: "pumpkin-curry", name: "Quick pumpkin coconut curry", main: "pumpkin", method: "light", time: "30 min", serves: "4",
+    blurb: "Warm spices, chickpeas, and greens over brown rice. Works with pumpkin, sweet potato, or both.",
+    ingredients: ["1 tbsp oil", "1 onion, chopped", "1 tbsp grated fresh ginger", "2 garlic cloves", "2 tbsp curry powder or red curry paste", "4 cups pumpkin or sweet potato cubes", "1 can (15 oz) light coconut milk", "1 can chickpeas, rinsed", "1/2 cup water", "2 cups kale or spinach", "1 lime", "Brown rice to serve"],
+    steps: ["Soften the onion in oil for 5 minutes.", "Add the ginger, garlic, and curry and stir for 1 minute.", "Add the pumpkin, coconut milk, chickpeas, and water, and simmer 15 minutes until tender.", "Stir in the greens for 2 minutes.", "Finish with lime juice and salt, and serve over rice."],
+    why: "Ginger and spices add flavor without much salt, and chickpeas add protein and fiber.",
+    tip: "Tastes even better the next day." },
+  { id: "sweet-potato-apple-saute", name: "Sweet potato and apple sauté", main: "sweetpotato", method: "light", time: "20 min", serves: "4",
+    blurb: "A sweet side with no added sugar. Great next to pork, chicken, or eggs.",
+    ingredients: ["2 sweet potatoes, small dice", "2 apples, diced", "1 tbsp butter or oil", "2 tbsp water", "1/2 tsp cinnamon", "Pinch of salt", "Chopped pecans"],
+    steps: ["Cook the sweet potato in the butter with the water, covered, over medium heat for 8 minutes.", "Add the apples and cinnamon and cook 4 to 5 minutes, until the apples are tender but still hold their shape.", "Season with salt and top with pecans."],
+    why: "Naturally sweet, and the apples add pectin, a fiber that's good for your gut.",
+    tip: "Local apples are in season in the fall. Scott's Orchard in Hazel Green grows them; call ahead." }
+];
+const R_BY_ID = Object.fromEntries(RECIPES.map(r => [r.id, r]));
+ 
+/* ==================================================================
+   Farm-fresh fall menus
+   ================================================================== */
+const MENUS = [
+  { id: "harvest-supper", name: "Harvest Sunday supper", line: "A slow Sunday table that shows off everything fall does well.",
+    serves: "4", time: "About 1 1/2 hours",
+    courses: [ { c: "Starter", r: "pumpkin-apple-salad" }, { c: "Main", r: "stuffed-pumpkin" }, { c: "Side", r: "garlic-kale" }, { c: "To finish", t: "Muscadines and sliced local apples" } ],
+    plan: ["The day before or that morning, cook the rice for the stuffing.", "About 90 minutes before dinner, put the pumpkin halves in to roast.", "While they roast, make the filling and the salad dressing.", "Fill the pumpkins and put them back in for 10 minutes.", "While they finish, sauté the kale and toss the salad."],
+    shop: ["Scott's Orchard", "Gin House Branch Farm", "Brown's Orchards and Vineyards"],
+    note: "Muscadine season usually winds down in October, so call the farm before you drive." },
+  { id: "group-potluck", name: "Garden group potluck", line: "Everyone brings one dish, so no one is stuck cooking everything.",
+    serves: "6 to 8", time: "1 hour for the host",
+    courses: [ { c: "Host", r: "sweet-potato-bar" }, { c: "Guest 1", r: "pumpkin-bean-soup" }, { c: "Guest 2", r: "massaged-kale" }, { c: "Guest 3", r: "pumpkin-seeds" }, { c: "Guest 4", r: "pumpkin-muffins" } ],
+    plan: ["A week out, the host shares the list in the group text and people claim a dish.", "The host bakes the sweet potatoes and sets out toppings. Members bring extra kale from their gardens for the topping bar.", "The soup travels hot in a slow cooker; the kale salad is dressed at home and holds fine.", "Send leftovers home with whoever grew the kale."],
+    shop: ["Madison City Farmers Market", "The Market at MidCity", "Ayers Farm Farmers Market"],
+    note: "Split market costs evenly, or let each cook buy for their own dish." },
+  { id: "weeknight", name: "Thirty-minute weeknight", line: "One skillet, one side, and supper's done.",
+    serves: "2 to 3", time: "30 minutes",
+    courses: [ { c: "Main", r: "sweet-potato-skillet" }, { c: "Side", r: "steamed-sweet-potato" }, { c: "Sweet bite", t: "Apple slices with peanut butter" } ],
+    plan: ["Start the sweet potato cubes in the skillet first. They take longest.", "Chop the onion, pepper, and kale while it cooks.", "If you're making the steamed side too, steam extra cubes and save half for tomorrow's lunch.", "Crack in the eggs in the last 5 minutes."],
+    shop: ["Ayers Farm Farmers Market", "The Providence Market"],
+    note: "Ayers Farm keeps the longest weekly hours on the list, Wednesday through Saturday." },
+  { id: "raw-lunch", name: "Raw and crunchy lunch box", line: "Nothing to cook, everything to chew. Packs well for work or school.",
+    serves: "4", time: "25 minutes",
+    courses: [ { c: "Salad", r: "pumpkin-carrot-ginger" }, { c: "Slaw", r: "sweet-potato-kale-slaw" }, { c: "Snack", r: "sweet-potato-coins" }, { c: "Breakfast", r: "pumpkin-overnight-oats" } ],
+    plan: ["Sunday night, grate the pumpkin and carrots and mix the salad.", "Make the slaw but keep the pecans separate so they stay crunchy.", "Stir up jars of overnight oats for the first two mornings.", "Slice the sweet potato coins the morning you eat them, and pack the dip in a small jar."],
+    shop: ["Oakwood Farmers Market", "Healthworks Farmers Market"],
+    note: "Raw food keeps the most vitamin C, but go easy on raw sweet potato if you're new to it." },
+  { id: "fall-brunch", name: "Fall brunch", line: "Make-ahead muffins and oats mean the host gets to sit down too.",
+    serves: "4 to 6", time: "40 minutes on the day",
+    courses: [ { c: "Bake", r: "pumpkin-muffins" }, { c: "Jar", r: "pumpkin-overnight-oats" }, { c: "Warm side", r: "sweet-potato-apple-saute" }, { c: "Fruit", t: "Muscadines or sliced apples" } ],
+    plan: ["The night before, bake the muffins and set up the overnight oats.", "In the morning, warm the muffins for 5 minutes in a low oven.", "Make the sweet potato and apple sauté while coffee brews.", "Put out fruit and let people help themselves."],
+    shop: ["Scott's Orchard", "Madison City Farmers Market", "Gin House Branch Farm"],
+    note: "Double the oats and keep some for the week." },
+  { id: "curry-night", name: "Cozy curry night", line: "A pot that simmers while you set the table. Good for the first cold snap.",
+    serves: "4", time: "35 minutes",
+    courses: [ { c: "Main", r: "pumpkin-curry" }, { c: "Crunch", r: "sweet-potato-kale-slaw" }, { c: "Topping", r: "pumpkin-seeds" } ],
+    plan: ["Toast the pumpkin seeds first if you have them; they need 30 minutes in the oven.", "Start the rice, then the curry.", "Make the slaw while the curry simmers.", "Scatter seeds over each bowl."],
+    shop: ["The Market at MidCity", "Greene Street Farmers Market"],
+    note: "Swap in sweet potato for some or all of the pumpkin." }
+];
+const M_BY_ID = Object.fromEntries(MENUS.map(m => [m.id, m]));
+const placeByName = n => PLACES.find(p => p.name === n);
+const menusUsing = rid => MENUS.filter(m => m.courses.some(c => c.r === rid));
+ 
+/* ---------- Menu board ---------- */
+document.getElementById("menuGrid").innerHTML = MENUS.map(m => `
+  <article class="menu-card rounded-xl bg-card text-ink p-5 pt-6 flex flex-col">
+    <h3 class="font-display text-2xl leading-tight">${m.name}</h3>
+    <p class="mt-1 text-muted">${m.line}</p>
+    <ul class="mt-4 grid gap-2 text-[15px]">
+      ${m.courses.map(c => `<li class="leader"><span class="font-semibold text-muted whitespace-nowrap shrink-0">${c.c}</span><span class="dish font-semibold">${c.r ? R_BY_ID[c.r].name : c.t}</span></li>`).join("")}
+    </ul>
+    <p class="mt-4 text-sm text-muted">Serves ${m.serves}. ${m.time}.</p>
+    <button data-menu="${m.id}" class="mt-4 self-start rounded-full bg-leaf text-onleaf font-semibold px-5 py-2 cursor-pointer">Open this menu</button>
+  </article>`).join("");
+ 
+/* ---------- Recipe list ---------- */
+const rState = { method: "all", main: "all" };
+const methodBtns = document.getElementById("methodBtns"), mainBtns = document.getElementById("mainBtns");
+function segBtns(el, opts, cur, key) {
+  el.innerHTML = opts.map(([v, l]) => `<button data-${key}="${v}" aria-pressed="${cur === v}" class="flex-auto px-3 py-2 text-sm font-semibold cursor-pointer ${cur === v ? "bg-leaf text-onleaf underline underline-offset-4 decoration-2" : "bg-paper text-ink"}">${l}</button>`).join("");
+}
+function drawRecipeFilters() {
+  segBtns(methodBtns, [["all", "All"], ...Object.entries(METHODS)], rState.method, "method");
+  segBtns(mainBtns, [["all", "All"], ...Object.entries(MAINS).map(([k, v]) => [k, v.name])], rState.main, "main");
+}
+methodBtns.addEventListener("click", e => { const b = e.target.closest("[data-method]"); if (b) { rState.method = b.dataset.method; drawRecipeFilters(); drawRecipes(); } });
+mainBtns.addEventListener("click", e => { const b = e.target.closest("[data-main]"); if (b) { rState.main = b.dataset.main; drawRecipeFilters(); drawRecipes(); } });
+function drawRecipes() {
+  const vis = RECIPES.filter(r => (rState.method === "all" || r.method === rState.method) && (rState.main === "all" || r.main === rState.main));
+  document.getElementById("recipeCount").textContent = vis.length === RECIPES.length ? `Showing all ${vis.length} recipes` : `Showing ${vis.length} of ${RECIPES.length} recipes`;
+  document.getElementById("recipeGrid").innerHTML = vis.length ? vis.map(r => `
+    <button data-recipe="${r.id}" class="text-left rounded-xl bg-card border border-line border-l-8 p-4 cursor-pointer hover:border-leaf flex flex-col" style="border-left-color:${MAINS[r.main].color}">
+      <span class="flex flex-wrap items-center gap-2 text-sm">
+        <span class="inline-flex items-center gap-1.5 font-semibold">${dot(MAINS[r.main].color, 10)}${MAINS[r.main].name}</span>
+        <span class="rounded-full border border-line px-2 py-0.5 text-xs font-semibold text-muted">${METHODS[r.method]}</span>
+      </span>
+      <span class="mt-2 font-display text-xl leading-tight">${r.name}</span>
+      <span class="mt-1.5 text-muted">${r.blurb}</span>
+      <span class="mt-3 text-sm font-semibold">${r.time}. Serves ${r.serves}.</span>
+    </button>`).join("")
+    : `<div class="rounded-xl border border-dashed border-line p-6 text-center sm:col-span-2 lg:col-span-3"><p class="font-semibold">No recipes match that pair yet.</p><p class="text-muted text-sm mt-1">Pick "All" in one of the filters to see more.</p></div>`;
+}
+drawRecipeFilters(); drawRecipes();
+ 
+/* ==================================================================
+   Grow kale
+   ================================================================== */
+const KALE_BENEFITS = [
+  ["Vitamin K", "A cup of raw kale covers more than half a day's vitamin K, which your blood needs to clot and your bones need to stay strong."],
+  ["Vitamins A and C", "Beta-carotene for eyes, skin, and immune health, and vitamin C to help you absorb iron from beans and grains."],
+  ["Eye-friendly pigments", "Lutein and zeaxanthin collect in the eye and are linked to lower risk of age-related eye problems."],
+  ["Calcium you can use", "Kale is low in oxalate, so its calcium is absorbed better than the calcium in spinach."],
+  ["Big volume, tiny calories", "About 10 calories a cup raw, with fiber that helps you feel full. It's in the cabbage family, whose natural compounds are being studied for protecting cells."]
+];
+document.getElementById("kaleBenefits").innerHTML = KALE_BENEFITS.map(([h, t]) =>
+  `<li class="flex gap-3"><span aria-hidden="true" class="mt-1.5 h-3 w-3 rounded-full bg-leaf shrink-0"></span><span><span class="font-semibold">${h}.</span> ${t}</span></li>`).join("");
+ 
+const KALE_TYPES = [
+  ["Lacinato (also called Tuscan or dinosaur kale)", "Long, bumpy, dark blue-green leaves. The most tender to eat raw and the best for the massaged salad."],
+  ["Curly green kale", "The ruffled kind from the grocery store. Very cold-hardy and great for sautéing and soup."],
+  ["Red Russian", "Flat, frilly leaves with purple stems. Mild and tender, and pretty in a pot by the door."]
+];
+document.getElementById("kaleTypes").innerHTML = KALE_TYPES.map(([h, t]) =>
+  `<div class="rounded-xl border border-line bg-card p-4"><p class="font-semibold">${h}</p><p class="mt-1 text-muted">${t}</p></div>`).join("");
+ 
+const KALE_STEPS = [
+  ["Buy in the right window", "In North Alabama, set out kale from late August through October for harvests all winter, or in February and March for spring. The garden centers at Home Depot and Lowe's usually carry kale starts in fall; many are grown by Bonnie Plants, an Alabama company."],
+  ["Pick a healthy plant", "Look for deep green leaves, no yellowing, and no holes. Peek under the leaves for tiny green caterpillars. Roots poking out of the bottom of the pot mean it's been sitting too long."],
+  ["Give it a big pot and full sun", "One plant per pot at least 12 inches wide (about 3 gallons) with drainage holes. Fill with bagged potting mix, not yard dirt. Put it where it gets 6 or more hours of sun. In the ground, space plants 12 to 18 inches apart."],
+  ["Plant and water deeply", "Set the plant at the same depth it sat in its nursery pot, press the soil around it, and water until it runs out the bottom. After that, water when the top inch of soil feels dry."],
+  ["Feed it lightly", "Mix slow-release vegetable fertilizer into the soil at planting, or use a liquid vegetable feed every 3 to 4 weeks. Follow the label; more is not better."],
+  ["Harvest from the outside in", "Once the plant has 8 to 10 leaves, usually a few weeks after planting, snap off the lower outer leaves when they're hand-sized. Leave the center to keep growing, and it will keep producing for months."]
+];
+document.getElementById("kaleSteps").innerHTML = KALE_STEPS.map(([h, t]) =>
+  `<li><p class="font-semibold text-lg leading-snug">${h}</p><p class="mt-1 text-muted">${t}</p></li>`).join("");
+ 
+const SIMPLE_RULES = [
+  ["Buy plants, not seeds", "Starter plants skip the fussy weeks and give you leaves sooner. Seeds can come next year."],
+  ["Grow what you'll eat", "If no one at home likes kale yet, start with one plant and the massaged salad. Let the table decide what you grow next."],
+  ["Keep a list of one", "One crop, one spot, one routine. When it's working without thought, add the next thing."]
+];
+document.getElementById("simpleRules").innerHTML = SIMPLE_RULES.map(([h, t]) =>
+  `<div class="rounded-xl bg-card text-ink p-4"><p class="font-display text-xl">${h}</p><p class="mt-1">${t}</p></div>`).join("");
+ 
+const WEEKLY = [
+  ["Every few days", "Stick a finger in the soil. Dry an inch down? Water until it drains."],
+  ["Once a week", "Pick a handful of outer leaves. Flip a few leaves over and pick off any green caterpillars or eggs."],
+  ["Once a month", "Feed with liquid vegetable fertilizer, unless you used slow-release at planting."],
+  ["Hard freeze coming?", "Kale shrugs off frost and tastes sweeter after it. If the forecast drops into the teens, cover plants overnight with an old sheet or move pots against the house."]
+];
+document.getElementById("weekly").innerHTML = WEEKLY.map(([h, t]) =>
+  `<div class="rounded-lg border border-line bg-card px-4 py-3 grid sm:grid-cols-[9rem_1fr] gap-1 sm:gap-3"><span class="font-semibold">${h}</span><span class="text-muted">${t}</span></div>`).join("");
+ 
+const NEXT_PLANTS = [
+  ["Collard greens", "Kale's Southern cousin. Same care, bigger leaves, and just as cold-hardy."],
+  ["Lettuce", "Grows fast in cool weather. Pick leaves for salads in about a month."],
+  ["Parsley", "One plant gives you garnish for months and handles light frost."],
+  ["Green onions", "Plant the root ends from store-bought onions and they regrow."]
+];
+document.getElementById("nextPlants").innerHTML = NEXT_PLANTS.map(([h, t]) =>
+  `<div class="rounded-lg border border-line bg-card px-4 py-3"><p class="font-semibold">${h}</p><p class="mt-0.5 text-sm text-muted">${t}</p></div>`).join("");
+ 
+/* ==================================================================
+   Small garden groups
+   ================================================================== */
+const GROUP_IDEAS = [
+  ["Grow different things", "Each person grows one or two crops so the group gets variety without anyone overplanting. For fall, two people might grow kale, one collards, one lettuce, and one herbs."],
+  ["Share what you buy", "Starter plants come in 4- and 6-packs. Split a pack three ways, share a bag of potting mix, and pass around one good pair of garden snips."],
+  ["Eat together monthly", "Rotate a potluck at a different house each month. The garden group potluck menu above is already split into dishes, one per person."]
+];
+document.getElementById("groupIdeas").innerHTML = GROUP_IDEAS.map(([h, t]) =>
+  `<div class="rounded-xl bg-card border-2 border-line p-5"><p class="font-display text-xl">${h}</p><p class="mt-2 text-muted">${t}</p></div>`).join("");
+ 
+const FIRST_MEETING = [
+  ["Pick a regular day", "For example, the second Saturday morning of each month. A fixed day means no one has to organize from scratch."],
+  ["Each person names one crop", "Just one for now. Write the list down so you don't end up with five people growing the same thing."],
+  ["Start a group text", "For harvest swaps, \"who has extra kale?\", and freeze warnings."],
+  ["Plan the first potluck", "Open the garden group potluck menu and let people claim a dish."],
+  ["Choose a market or farm trip", "Pick one from the list below and carpool."]
+];
+document.getElementById("firstMeeting").innerHTML = FIRST_MEETING.map(([h, t]) =>
+  `<li><p class="font-semibold leading-snug">${h}</p><p class="mt-0.5 text-muted">${t}</p></li>`).join("");
+ 
+const ROLES = [
+  ["Host", "Opens their home or porch, picks the menu, and handles the main dish."],
+  ["Market runner", "Takes the shopping list to a market or farm and splits the receipt."],
+  ["Plant keeper", "Watches for starter plants at the garden centers and tells everyone when the good ones come in."],
+  ["Note taker", "Keeps one shared note: what grew well, which recipes everyone liked, what to try next time."]
+];
+document.getElementById("roles").innerHTML = ROLES.map(([h, t]) =>
+  `<div class="rounded-xl border border-line bg-card p-4"><p class="font-semibold">${h}</p><p class="mt-1 text-sm text-muted">${t}</p></div>`).join("");
+ 
+const CALENDAR = [
+  { m: 8, h: "September", t: "First meeting. Pick crops, buy kale and collard starts, and plant together at one house so everyone sees how." },
+  { m: 9, h: "October", t: "First small kale harvests. Farm trip for apples and the last muscadines. Potluck number one." },
+  { m: 10, h: "November", t: "Leaves come steadily now. Cook from the recipes for Thanksgiving sides and swap extras." },
+  { m: 11, h: "December", t: "Cover plants on freeze nights. Curry night potluck, and talk about what to plant in spring." }
+];
+document.getElementById("groupCalendar").innerHTML = CALENDAR.map(c => {
+  const now = c.m === THIS_MONTH;
+  return `<div class="rounded-xl p-4 ${now ? "bg-leaf text-onleaf" : "bg-card border border-line"}">
+    <p class="font-display text-xl">${c.h}${now ? " (now)" : ""}</p>
+    <p class="mt-1 ${now ? "" : "text-muted"}">${c.t}</p>
+  </div>`;
+}).join("");
+ 
+document.getElementById("tripTitle").textContent = `Group trip ideas for ${MONTH_NAMES[THIS_MONTH]}`;
+const tripPlaces = PLACES.filter(p => !p.months || p.months.has(THIS_MONTH));
+document.getElementById("groupTrips").innerHTML = tripPlaces.map(p => `
+  <button data-place="${p.i}" class="text-left rounded-lg bg-card border border-line px-3 py-2 cursor-pointer hover:border-leaf">
+    <span class="flex items-center gap-2 font-semibold"><span class="pin ${p.isPick ? "pin-pick" : "pin-market"}" style="width:12px;height:12px;border-width:2px;box-shadow:none"></span>${esc(p.name)}</span>
+    <span class="block text-sm text-muted">${esc(p.town)}. ${esc(p.times)}</span>
+  </button>`).join("");
+ 
+/* ==================================================================
+   Popups (one dialog, many kinds of content)
+   ================================================================== */
 const dlg = document.getElementById("dlg");
+function openDlg(inner) {
+  dlg.innerHTML = `<div class="p-5 sm:p-6 overflow-y-auto max-h-[88vh]">${inner}</div>`;
+  if (!dlg.open) dlg.showModal();
+  dlg.firstElementChild.scrollTop = 0;
+  dlg.querySelector("[data-close]").focus();
+}
+function dlgHead(title, lead) {
+  return `<div class="flex items-start justify-between gap-3">
+      <div class="flex items-center gap-3">${lead || ""}<h2 id="dlgTitle" class="font-display text-3xl leading-none">${title}</h2></div>
+      <button data-close class="rounded-full border border-line px-3 py-1 text-sm font-semibold cursor-pointer">Close</button>
+    </div>`;
+}
+const linkBtn = (attr, title, sub) => `<button ${attr} class="text-left rounded-lg border border-line px-3 py-2 cursor-pointer hover:border-leaf"><span class="font-semibold">${title}</span>${sub ? `<span class="block text-sm text-muted">${sub}</span>` : ""}</button>`;
+ 
 function openProduce(id) {
   const p = P_BY_ID[id]; if (!p) return;
   const where = placesFor(id);
-  dlg.innerHTML = `
-    <div class="p-5 sm:p-6 overflow-y-auto max-h-[88vh]">
-      <div class="flex items-start justify-between gap-3">
-        <div class="flex items-center gap-3">${dot(p.color, 36)}<h2 id="dlgTitle" class="font-display text-3xl leading-none">${p.name}</h2></div>
-        <button data-close class="rounded-full border border-line px-3 py-1 text-sm font-semibold cursor-pointer">Close</button>
-      </div>
+  const recs = RECIPES.filter(r => MAINS[r.main].produce === id);
+  openDlg(`
+      ${dlgHead(p.name, dot(p.color, 36))}
       <p class="mt-3 text-lg">${p.headline}</p>
       <div class="mt-4">
         <p class="text-sm font-semibold mb-1.5">In season ${p.season}${p.months.includes(THIS_MONTH) ? ", so now is the time" : ""}</p>
@@ -659,22 +1189,68 @@ function openProduce(id) {
       <ul class="mt-2 grid gap-2">${p.benefits.map(b => `<li class="flex gap-2.5"><span aria-hidden="true" class="mt-2 h-2 w-2 rounded-full bg-leaf shrink-0"></span><span>${b}</span></li>`).join("")}</ul>
       <h3 class="mt-5 font-semibold">Picking and keeping</h3>
       <p class="mt-1">${p.tip}</p>
+      ${recs.length ? `<h3 class="mt-5 font-semibold">Recipes to try</h3><div class="mt-2 grid gap-2">${recs.map(r => linkBtn(`data-recipe="${r.id}"`, r.name, `${METHODS[r.method]}. ${r.time}.`)).join("")}</div>` : ""}
       <h3 class="mt-5 font-semibold">Where to get it</h3>
       ${where.length
-        ? `<div class="mt-2 grid gap-2">${where.map(w => `<button data-place="${w.i}" class="text-left rounded-lg border border-line px-3 py-2 cursor-pointer hover:border-leaf"><span class="font-semibold">${esc(w.name)}</span><span class="block text-sm text-muted">${esc(w.town)}. ${esc(w.times)}</span></button>`).join("")}</div>`
+        ? `<div class="mt-2 grid gap-2">${where.map(w => linkBtn(`data-place="${w.i}"`, esc(w.name), `${esc(w.town)}. ${esc(w.times)}`)).join("")}</div>`
         : `<p class="mt-1 text-muted">The listings don't name ${p.name.toLowerCase()} at a specific farm. It's a common sight at North Alabama farmers markets in season, so ask the growers there.</p>
-           <button data-filter-markets class="mt-3 rounded-full bg-leaf text-onleaf font-semibold px-4 py-1.5 text-sm cursor-pointer">Show the farmers markets</button>`}
-    </div>`;
-  if (!dlg.open) dlg.showModal();
-  dlg.querySelector("[data-close]").focus();
+           <button data-filter-markets class="mt-3 rounded-full bg-leaf text-onleaf font-semibold px-4 py-1.5 text-sm cursor-pointer">Show the farmers markets</button>`}`);
 }
+ 
+function openRecipe(id) {
+  const r = R_BY_ID[id]; if (!r) return;
+  const mm = MAINS[r.main], ms = menusUsing(id);
+  openDlg(`
+      ${dlgHead(r.name)}
+      <div class="mt-3 flex flex-wrap items-center gap-2 text-sm">
+        <button data-produce="${mm.produce}" class="inline-flex items-center gap-1.5 rounded-full bg-sunsoft border border-ink/40 px-3 font-semibold cursor-pointer">${dot(mm.color, 10)}${mm.name}</button>
+        <span class="rounded-full border border-line px-3 py-1 font-semibold">${METHODS[r.method]}</span>
+        <span class="rounded-full border border-line px-3 py-1 font-semibold">${r.time}</span>
+        <span class="rounded-full border border-line px-3 py-1 font-semibold">Serves ${r.serves}</span>
+      </div>
+      <p class="mt-3 text-lg">${r.blurb}</p>
+      <h3 class="mt-5 font-semibold">You'll need</h3>
+      <ul class="mt-2 grid gap-1.5">${r.ingredients.map(i => `<li class="flex gap-2.5"><span aria-hidden="true" class="mt-2 h-2 w-2 rounded-full bg-leaf shrink-0"></span><span>${i}</span></li>`).join("")}</ul>
+      <h3 class="mt-5 font-semibold">How to make it</h3>
+      <ol class="steps mt-3 grid gap-3">${r.steps.map(s => `<li>${s}</li>`).join("")}</ol>
+      <div class="mt-5 rounded-xl bg-sprout/60 border border-line p-4">
+        <p class="font-semibold">Why it's good for you</p>
+        <p class="mt-1">${r.why}</p>
+      </div>
+      <h3 class="mt-5 font-semibold">Tip</h3>
+      <p class="mt-1">${r.tip}</p>
+      ${ms.length ? `<h3 class="mt-5 font-semibold">On these menus</h3><div class="mt-2 grid gap-2">${ms.map(m => linkBtn(`data-menu="${m.id}"`, m.name, `Serves ${m.serves}`)).join("")}</div>` : ""}`);
+}
+ 
+function openMenu(id) {
+  const m = M_BY_ID[id]; if (!m) return;
+  const shops = m.shop.map(placeByName).filter(Boolean);
+  openDlg(`
+      ${dlgHead(m.name)}
+      <p class="mt-3 text-lg">${m.line}</p>
+      <p class="mt-1 text-sm font-semibold text-muted">Serves ${m.serves}. ${m.time}.</p>
+      <h3 class="mt-5 font-semibold">On the menu</h3>
+      <p class="text-sm text-muted">Tap a dish for the full recipe.</p>
+      <div class="mt-2 grid gap-2">${m.courses.map(c => c.r
+        ? `<button data-recipe="${c.r}" class="text-left rounded-lg border border-line px-3 py-2 cursor-pointer hover:border-leaf"><span class="block text-sm text-muted font-semibold">${c.c}</span><span class="font-semibold">${R_BY_ID[c.r].name}</span><span class="block text-sm text-muted">${METHODS[R_BY_ID[c.r].method]}. ${R_BY_ID[c.r].time}.</span></button>`
+        : `<div class="rounded-lg border border-dashed border-line px-3 py-2"><span class="block text-sm text-muted font-semibold">${c.c}</span><span class="font-semibold">${c.t}</span></div>`).join("")}</div>
+      <h3 class="mt-5 font-semibold">Game plan</h3>
+      <ol class="steps mt-3 grid gap-3">${m.plan.map(s => `<li>${s}</li>`).join("")}</ol>
+      <h3 class="mt-5 font-semibold">Where to shop</h3>
+      <div class="mt-2 grid gap-2">${shops.map(w => linkBtn(`data-place="${w.i}"`, esc(w.name), `${esc(w.town)}. ${esc(w.times)}`)).join("")}</div>
+      <p class="mt-4 rounded-lg bg-sunsoft px-3 py-2 text-ink">${m.note}</p>`);
+}
+ 
 dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
-
+ 
 document.addEventListener("click", e => {
-  const t = e.target.closest("[data-produce],[data-place],[data-close],[data-filter-markets]");
+  if (e.target.closest("#dlg a[href^='#']")) { dlg.close(); return; }
+  const t = e.target.closest("[data-produce],[data-place],[data-close],[data-filter-markets],[data-recipe],[data-menu]");
   if (!t) return;
   if (t.hasAttribute("data-close")) return dlg.close();
   if (t.dataset.produce) return openProduce(t.dataset.produce);
+  if (t.dataset.recipe) return openRecipe(t.dataset.recipe);
+  if (t.dataset.menu) return openMenu(t.dataset.menu);
   if (t.hasAttribute("data-filter-markets")) {
     dlg.close();
     const c = cats.find(c => /market/i.test(c)); if (c) state.cat = c;
@@ -684,10 +1260,10 @@ document.addEventListener("click", e => {
   }
   if (t.dataset.place) { if (dlg.open) dlg.close(); focusPlace(+t.dataset.place); }
 });
-
+ 
 drawCats();
 drawList();
-
+ 
 /* ---------- Light / dark mode ---------- */
 const themeBtn = document.getElementById("themeBtn"), root = document.documentElement;
 const currentTheme = () => root.getAttribute("data-theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
@@ -708,3 +1284,4 @@ paintThemeBtn();
 </script>
 </body>
 </html>
+ 
