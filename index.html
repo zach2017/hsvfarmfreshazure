@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Huntsville Fresh Food Directory</title>
+<script>
+  try { var t = localStorage.getItem("hsv-theme"); if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.3/dist/index.global.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+<style> .leaflet-pane, .leaflet-tile, .leaflet-marker-icon, .leaflet-marker-shadow, .leaflet-tile-container, .leaflet-pane > svg, .leaflet-pane > canvas, .leaflet-zoom-box, .leaflet-image-layer, .leaflet-layer { position: absolute; left: 0; top: 0; } .leaflet-container { overflow: hidden; } .leaflet-tile, .leaflet-marker-icon, .leaflet-marker-shadow { -webkit-user-select: none; -moz-user-select: none; user-select: none; -webkit-user-drag: none; } .leaflet-tile::selection { background: transparent; } .leaflet-safari .leaflet-tile { image-rendering: -webkit-optimize-contrast; } .leaflet-safari .leaflet-tile-container { width: 1600px; height: 1600px; -webkit-transform-origin: 0 0; } .leaflet-marker-icon, .leaflet-marker-shadow { display: block; } .leaflet-container .leaflet-overlay-pane svg { max-width: none !important; max-height: none !important; } .leaflet-container .leaflet-marker-pane img, .leaflet-container .leaflet-shadow-pane img, .leaflet-container .leaflet-tile-pane img, .leaflet-container img.leaflet-image-layer, .leaflet-container .leaflet-tile { max-width: none !important; max-height: none !important; width: auto; padding: 0; } .leaflet-container img.leaflet-tile { mix-blend-mode: plus-lighter; } .leaflet-container.leaflet-touch-zoom { -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; } .leaflet-container.leaflet-touch-drag { -ms-touch-action: pinch-zoom; touch-action: none; touch-action: pinch-zoom; } .leaflet-container.leaflet-touch-drag.leaflet-touch-zoom { -ms-touch-action: none; touch-action: none; } .leaflet-container { -webkit-tap-highlight-color: transparent; } .leaflet-container a { -webkit-tap-highlight-color: rgba(51, 181, 229, 0.4); } .leaflet-tile { filter: inherit; visibility: hidden; } .leaflet-tile-loaded { visibility: inherit; } .leaflet-zoom-box { width: 0; height: 0; -moz-box-sizing: border-box; box-sizing: border-box; z-index: 800; } .leaflet-overlay-pane svg { -moz-user-select: none; } .leaflet-pane { z-index: 400; } .leaflet-tile-pane { z-index: 200; } .leaflet-overlay-pane { z-index: 400; } .leaflet-shadow-pane { z-index: 500; } .leaflet-marker-pane { z-index: 600; } .leaflet-tooltip-pane { z-index: 650; } .leaflet-popup-pane { z-index: 700; } .leaflet-map-pane canvas { z-index: 100; } .leaflet-map-pane svg { z-index: 200; } .leaflet-vml-shape { width: 1px; height: 1px; } .leaflet-control { position: relative; z-index: 800; pointer-events: visiblePainted; pointer-events: auto; } .leaflet-top, .leaflet-bottom { position: absolute; z-index: 1000; pointer-events: none; } .leaflet-top { top: 0; } .leaflet-right { right: 0; } .leaflet-bottom { bottom: 0; } .leaflet-left { left: 0; } .leaflet-control { float: left; clear: both; } .leaflet-right .leaflet-control { float: right; } .leaflet-top .leaflet-control { margin-top: 10px; } .leaflet-bottom .leaflet-control { margin-bottom: 10px; } .leaflet-left .leaflet-control { margin-left: 10px; } .leaflet-right .leaflet-control { margin-right: 10px; } .leaflet-fade-anim .leaflet-popup { opacity: 0; -webkit-transition: opacity 0.2s linear; -moz-transition: opacity 0.2s linear; transition: opacity 0.2s linear; } .leaflet-fade-anim .leaflet-map-pane .leaflet-popup { opacity: 1; } .leaflet-zoom-animated { -webkit-transform-origin: 0 0; -ms-transform-origin: 0 0; transform-origin: 0 0; } svg.leaflet-zoom-animated { will-change: transform; } .leaflet-zoom-anim .leaflet-zoom-animated { -webkit-transition: -webkit-transform 0.25s cubic-bezier(0,0,0.25,1); -moz-transition: -moz-transform 0.25s cubic-bezier(0,0,0.25,1); transition: transform 0.25s cubic-bezier(0,0,0.25,1); } .leaflet-zoom-anim .leaflet-tile, .leaflet-pan-anim .leaflet-tile { -webkit-transition: none; -moz-transition: none; transition: none; } .leaflet-zoom-anim .leaflet-zoom-hide { visibility: hidden; } .leaflet-interactive { cursor: pointer; } .leaflet-grab { cursor: -webkit-grab; cursor: -moz-grab; cursor: grab; } .leaflet-crosshair, .leaflet-crosshair .leaflet-interactive { cursor: crosshair; } .leaflet-popup-pane, .leaflet-control { cursor: auto; } .leaflet-dragging .leaflet-grab, .leaflet-dragging .leaflet-grab .leaflet-interactive, .leaflet-dragging .leaflet-marker-draggable { cursor: move; cursor: -webkit-grabbing; cursor: -moz-grabbing; cursor: grabbing; } .leaflet-marker-icon, .leaflet-marker-shadow, .leaflet-image-layer, .leaflet-pane > svg path, .leaflet-tile-container { pointer-events: none; } .leaflet-marker-icon.leaflet-interactive, .leaflet-image-layer.leaflet-interactive, .leaflet-pane > svg path.leaflet-interactive, svg.leaflet-image-layer.leaflet-interactive path { pointer-events: visiblePainted; pointer-events: auto; } .leaflet-container { background: #ddd; outline-offset: 1px; } .leaflet-container a { color: #0078A8; } .leaflet-zoom-box { border: 2px dotted #38f; background: rgba(255,255,255,0.5); } .leaflet-container { font-family: "Helvetica Neue", Arial, Helvetica, sans-serif; font-size: 12px; font-size: 0.75rem; line-height: 1.5; } .leaflet-bar { box-shadow: 0 1px 5px rgba(0,0,0,0.65); border-radius: 4px; } .leaflet-bar a { background-color: #fff; border-bottom: 1px solid #ccc; width: 26px; height: 26px; line-height: 26px; display: block; text-align: center; text-decoration: none; color: black; } .leaflet-bar a, .leaflet-control-layers-toggle { background-position: 50% 50%; background-repeat: no-repeat; display: block; } .leaflet-bar a:hover, .leaflet-bar a:focus { background-color: #f4f4f4; } .leaflet-bar a:first-child { border-top-left-radius: 4px; border-top-right-radius: 4px; } .leaflet-bar a:last-child { border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-bottom: none; } .leaflet-bar a.leaflet-disabled { cursor: default; background-color: #f4f4f4; color: #bbb; } .leaflet-touch .leaflet-bar a { width: 30px; height: 30px; line-height: 30px; } .leaflet-touch .leaflet-bar a:first-child { border-top-left-radius: 2px; border-top-right-radius: 2px; } .leaflet-touch .leaflet-bar a:last-child { border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; } .leaflet-control-zoom-in, .leaflet-control-zoom-out { font: bold 18px 'Lucida Console', Monaco, monospace; text-indent: 1px; } .leaflet-touch .leaflet-control-zoom-in, .leaflet-touch .leaflet-control-zoom-out { font-size: 22px; } .leaflet-control-layers { box-shadow: 0 1px 5px rgba(0,0,0,0.4); background: #fff; border-radius: 5px; } .leaflet-touch .leaflet-control-layers-toggle { width: 44px; height: 44px; } .leaflet-control-layers .leaflet-control-layers-list, .leaflet-control-layers-expanded .leaflet-control-layers-toggle { display: none; } .leaflet-control-layers-expanded .leaflet-control-layers-list { display: block; position: relative; } .leaflet-control-layers-expanded { padding: 6px 10px 6px 6px; color: #333; background: #fff; } .leaflet-control-layers-scrollbar { overflow-y: scroll; overflow-x: hidden; padding-right: 5px; } .leaflet-control-layers-selector { margin-top: 2px; position: relative; top: 1px; } .leaflet-control-layers label { display: block; font-size: 13px; font-size: 1.08333em; } .leaflet-control-layers-separator { height: 0; border-top: 1px solid #ddd; margin: 5px -10px 5px -6px; } .leaflet-container .leaflet-control-attribution { background: #fff; background: rgba(255, 255, 255, 0.8); margin: 0; } .leaflet-control-attribution, .leaflet-control-scale-line { padding: 0 5px; color: #333; line-height: 1.4; } .leaflet-control-attribution a { text-decoration: none; } .leaflet-control-attribution a:hover, .leaflet-control-attribution a:focus { text-decoration: underline; } .leaflet-attribution-flag { display: inline !important; vertical-align: baseline !important; width: 1em; height: 0.6669em; } .leaflet-left .leaflet-control-scale { margin-left: 5px; } .leaflet-bottom .leaflet-control-scale { margin-bottom: 5px; } .leaflet-control-scale-line { border: 2px solid #777; border-top: none; line-height: 1.1; padding: 2px 5px 1px; white-space: nowrap; -moz-box-sizing: border-box; box-sizing: border-box; background: rgba(255, 255, 255, 0.8); text-shadow: 1px 1px #fff; } .leaflet-control-scale-line:not(:first-child) { border-top: 2px solid #777; border-bottom: none; margin-top: -2px; } .leaflet-control-scale-line:not(:first-child):not(:last-child) { border-bottom: 2px solid #777; } .leaflet-touch .leaflet-control-attribution, .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar { box-shadow: none; } .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar { border: 2px solid rgba(0,0,0,0.2); background-clip: padding-box; } .leaflet-popup { position: absolute; text-align: center; margin-bottom: 20px; } .leaflet-popup-content-wrapper { padding: 1px; text-align: left; border-radius: 12px; } .leaflet-popup-content { margin: 13px 24px 13px 20px; line-height: 1.3; font-size: 13px; font-size: 1.08333em; min-height: 1px; }  .leaflet-popup-tip-container { width: 40px; height: 20px; position: absolute; left: 50%; margin-top: -1px; margin-left: -20px; overflow: hidden; pointer-events: none; } .leaflet-popup-tip { width: 17px; height: 17px; padding: 1px; margin: -10px auto 0; pointer-events: auto; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); } .leaflet-popup-content-wrapper, .leaflet-popup-tip { background: white; color: #333; box-shadow: 0 3px 14px rgba(0,0,0,0.4); } .leaflet-container a.leaflet-popup-close-button { position: absolute; top: 0; right: 0; border: none; text-align: center; width: 24px; height: 24px; font: 16px/24px Tahoma, Verdana, sans-serif; color: #757575; text-decoration: none; background: transparent; } .leaflet-container a.leaflet-popup-close-button:hover, .leaflet-container a.leaflet-popup-close-button:focus { color: #585858; } .leaflet-popup-scrolled { overflow: auto; } .leaflet-oldie .leaflet-popup-content-wrapper { -ms-zoom: 1; } .leaflet-oldie .leaflet-popup-tip { width: 24px; margin: 0 auto; -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)"; filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678); } .leaflet-oldie .leaflet-control-zoom, .leaflet-oldie .leaflet-control-layers, .leaflet-oldie .leaflet-popup-content-wrapper, .leaflet-oldie .leaflet-popup-tip { border: 1px solid #999; } .leaflet-div-icon { background: #fff; border: 1px solid #666; } .leaflet-tooltip { position: absolute; padding: 6px; background-color: #fff; border: 1px solid #fff; border-radius: 3px; color: #222; white-space: nowrap; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; pointer-events: none; box-shadow: 0 1px 3px rgba(0,0,0,0.4); } .leaflet-tooltip.leaflet-interactive { cursor: pointer; pointer-events: auto; } .leaflet-tooltip-top:before, .leaflet-tooltip-bottom:before, .leaflet-tooltip-left:before, .leaflet-tooltip-right:before { position: absolute; pointer-events: none; border: 6px solid transparent; background: transparent; content: ""; } .leaflet-tooltip-bottom { margin-top: 6px; } .leaflet-tooltip-top { margin-top: -6px; } .leaflet-tooltip-bottom:before, .leaflet-tooltip-top:before { left: 50%; margin-left: -6px; } .leaflet-tooltip-top:before { bottom: 0; margin-bottom: -12px; border-top-color: #fff; } .leaflet-tooltip-bottom:before { top: 0; margin-top: -12px; margin-left: -6px; border-bottom-color: #fff; } .leaflet-tooltip-left { margin-left: -6px; } .leaflet-tooltip-right { margin-left: 6px; } .leaflet-tooltip-left:before, .leaflet-tooltip-right:before { top: 50%; margin-top: -6px; } .leaflet-tooltip-left:before { right: 0; margin-right: -12px; border-left-color: #fff; } .leaflet-tooltip-right:before { left: 0; margin-left: -12px; border-right-color: #fff; } @media print { .leaflet-control { -webkit-print-color-adjust: exact; print-color-adjust: exact; } } </style>
+<style>
+  :root {
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    --paper: #eef5e1;
+    --card: #fbfdf6;
+    --ink: #16301d;
+    --muted: #3a4f3f;
+    --field: #173f25;
+    --on-field: #f1f7e6;
+    --leaf: #1d6628;
+    --on-leaf: #ffffff;
+    --sprout: #d6eab2;
+    --straw: #f2c211;
+    --sun: #f5c518;
+    --on-sun: #1b2a10;
+    --sun-soft: #fbeaa0;
+    --line: #c3d8ad;
+    --map-bg: #dcebc6;
+    --river: #86bccd;
+    --road: #a9bf94;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0e1d13;
+      --card: #16291b;
+      --ink: #e6f1dc;
+      --muted: #b9cbb7;
+      --field: #12381f;
+      --on-field: #f1f7e6;
+      --leaf: #86d67f;
+      --on-leaf: #0c1f11;
+      --sprout: #284a2b;
+      --straw: #f5c518;
+      --sun: #f5c518;
+      --on-sun: #1b2a10;
+      --sun-soft: #4a4313;
+      --line: #2c4631;
+      --map-bg: #13261a;
+      --river: #2f6377;
+      --road: #36533a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #0e1d13;
+    --card: #16291b;
+    --ink: #e6f1dc;
+    --muted: #b9cbb7;
+    --field: #12381f;
+    --on-field: #f1f7e6;
+    --leaf: #86d67f;
+    --on-leaf: #0c1f11;
+    --sprout: #284a2b;
+    --straw: #f5c518;
+      --sun: #f5c518;
+      --on-sun: #1b2a10;
+      --sun-soft: #4a4313;
+    --line: #2c4631;
+    --map-bg: #13261a;
+    --river: #2f6377;
+    --road: #36533a;
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { background: var(--paper); color: var(--ink); margin: 0; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  /* Plowed-row band under the hero */
+  .furrows {
+    height: 28px;
+    background: repeating-linear-gradient(100deg, var(--field) 0 14px, var(--sun) 14px 20px);
+  }
+
+  :focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; box-shadow: 0 0 0 6px var(--sun); }
+  button, select, input, a.btn { min-height: 44px; }
+  .leaflet-bar a { min-height: 0; }
+  .topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 1100; }
+  .leaflet-touch .leaflet-bar a { width: 38px; height: 38px; line-height: 38px; }
+
+  /* Map */
+  #map { background: var(--map-bg); font-family: inherit; }
+  .river { stroke: var(--river); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+  .road { stroke: var(--road); stroke-width: 2.5; fill: none; }
+  .stateline { stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 6 6; fill: none; opacity: .6; }
+  .town-label span, .water-label span {
+    position: absolute; transform: translate(-50%, -50%); white-space: nowrap;
+    font-size: 12px; font-weight: 600; color: var(--muted);
+    text-shadow: 0 0 3px var(--map-bg), 0 0 3px var(--map-bg), 0 0 3px var(--map-bg);
+  }
+  .water-label span { font-style: italic; font-weight: 500; }
+  .pin-wrap { background: none; border: 0; }
+  .pin {
+    display: block; width: 22px; height: 22px; box-sizing: border-box;
+    border: 3px solid var(--card); box-shadow: 0 1px 4px rgba(10, 40, 20, .45);
+  }
+  .pin-market { border-radius: 50%; }
+  .pin-pick { background: var(--sun); border-color: #16301d; transform: rotate(45deg) scale(.86); border-radius: 3px; }
+  .pin-market { background: #1d6628; border-color: #ffffff; }
+  .pin-wrap.is-active .pin { outline: 3px solid var(--ink); outline-offset: 2px; }
+  .leaflet-popup-content-wrapper, .leaflet-popup-tip { background: var(--card); color: var(--ink); }
+  .leaflet-popup-content-wrapper { border-radius: 10px; }
+  .leaflet-popup-content { margin: 14px 16px; font-size: 14px; line-height: 1.45; }
+  .leaflet-container a.leaflet-popup-close-button { color: var(--muted); }
+  .leaflet-container a { color: var(--leaf); }
+  .leaflet-bar a, .leaflet-control-attribution { background: var(--card); color: var(--ink); }
+  .leaflet-bar a { border-bottom-color: var(--line); }
+  .leaflet-control-attribution { font-size: 11px; }
+  .leaflet-tooltip { background: var(--card); color: var(--ink); border-color: var(--line); font-weight: 600; }
+  .leaflet-tooltip-top:before { border-top-color: var(--card); }
+
+  dialog::backdrop { background: rgba(8, 28, 14, .6); }
+  dialog[open] { animation: rise .18s ease-out; }
+  @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { dialog[open] { animation: none; } }
+</style>
+<style type="text/tailwindcss">
+  @theme inline {
+    --color-paper: var(--paper);
+    --color-card: var(--card);
+    --color-ink: var(--ink);
+    --color-muted: var(--muted);
+    --color-field: var(--field);
+    --color-onfield: var(--on-field);
+    --color-leaf: var(--leaf);
+    --color-onleaf: var(--on-leaf);
+    --color-sprout: var(--sprout);
+    --color-straw: var(--straw);
+    --color-sun: var(--sun);
+    --color-onsun: var(--on-sun);
+    --color-sunsoft: var(--sun-soft);
+    --color-line: var(--line);
+    --font-display: "Alfa Slab One", Rockwell, "Roboto Slab", Georgia, serif;
+    --font-sans: Figtree, system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+</style>
+</head>
+<body class="font-sans antialiased">
+
+<div class="topbar bg-field text-onfield border-b border-sun/40">
+  <div class="mx-auto max-w-7xl px-3 sm:px-8 py-1.5 flex flex-wrap items-center justify-between gap-x-1">
+    <a href="#top" class="btn inline-flex items-center font-display text-[15px] sm:text-lg text-sun whitespace-nowrap">Huntsville Fresh</a>
+    <nav class="flex items-center gap-1 sm:gap-2 text-sm font-semibold" aria-label="Page">
+      <a href="#find" class="btn inline-flex items-center px-1.5 sm:px-3 underline underline-offset-4">Places</a>
+      <a href="#produce" class="btn inline-flex items-center px-1.5 sm:px-3 underline underline-offset-4">Benefits</a>
+      <button id="themeBtn" class="rounded-full bg-sun text-onsun px-3 sm:px-4 ml-1 cursor-pointer whitespace-nowrap" aria-pressed="false"></button>
+    </nav>
+  </div>
+</div>
+<header id="top" class="bg-field text-onfield">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 pt-8 pb-10 sm:pt-16 sm:pb-16 grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-end">
+    <div>
+      <h1 class="font-display text-[2.6rem] leading-[1.02] sm:text-7xl sm:leading-[0.98] text-sun tracking-tight">Fresh food, grown close to Huntsville</h1>
+      <p class="mt-6 max-w-xl text-lg leading-relaxed" id="heroSub"></p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href="#find" class="btn inline-flex items-center rounded-full bg-sun text-onsun font-bold px-5 py-2.5">Find a market or farm</a>
+        <a href="#produce" class="btn inline-flex items-center rounded-full border-2 border-sun text-onfield font-semibold px-5 py-2.5">See what's good for you</a>
+      </div>
+    </div>
+    <div class="rounded-xl border-2 border-sun/60 p-5">
+      <h2 class="font-semibold text-lg" id="seasonTitle"></h2>
+      <p class="text-sm opacity-80 mt-1">Tap one to see why it's worth eating and where to get it.</p>
+      <div class="mt-4 flex flex-wrap gap-2" id="seasonNow"></div>
+    </div>
+  </div>
+  <div class="furrows" aria-hidden="true"></div>
+</header>
+
+<main>
+  <section id="find" class="mx-auto max-w-7xl px-4 sm:px-8 pt-10 sm:pt-12 scroll-mt-14">
+    <h2 class="font-display text-3xl sm:text-4xl border-l-8 border-sun pl-3">Find a market or farm</h2>
+    <p class="mt-2 text-muted max-w-2xl">Pick a place from the list or the map. Hours come straight from the listings, and many places are seasonal, so call ahead before a long drive.</p>
+
+    <div class="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]">
+      <div>
+        <div class="rounded-xl bg-card border border-line p-4 grid gap-3">
+          <label class="grid gap-1 text-sm font-semibold">Search by name, town, or food
+            <input id="q" type="search" placeholder="Try peaches, Madison, or eggs" class="rounded-lg border border-line bg-paper px-3 py-2 font-normal text-base text-ink placeholder:text-muted">
+          </label>
+          <div class="grid gap-3 sm:flex sm:flex-wrap sm:items-end">
+            <fieldset>
+              <legend class="text-sm font-semibold mb-1">Type of place</legend>
+              <div class="flex w-full sm:w-auto rounded-lg border border-line overflow-hidden" id="catBtns"></div>
+            </fieldset>
+            <label class="grid gap-1 text-sm font-semibold">Open on
+              <select id="day" class="rounded-lg border border-line bg-paper px-3 py-2 font-normal text-base text-ink"></select>
+            </label>
+          </div>
+        </div>
+        <p class="mt-4 text-sm text-muted" id="count" aria-live="polite"></p>
+        <div id="list" class="mt-3 grid gap-3"></div>
+      </div>
+
+      <div class="lg:sticky lg:top-16 lg:self-start order-first lg:order-none scroll-mt-16" id="mapWrap">
+        <div class="rounded-xl overflow-hidden border border-line bg-card">
+          <div class="flex flex-wrap items-center justify-between gap-2 px-3 py-2 border-b border-line">
+            <div class="flex items-center gap-4 text-sm">
+              <span class="inline-flex items-center gap-2"><span class="pin pin-market" style="width:16px;height:16px;border-width:2px"></span>Farmers market</span>
+              <span class="inline-flex items-center gap-2"><span class="pin pin-pick" style="width:16px;height:16px;border-width:2px"></span>Pick your own</span>
+            </div>
+            <div class="flex gap-2 text-sm w-full sm:w-auto">
+              <button id="viewAll" class="flex-1 whitespace-nowrap rounded-md border border-line px-1 py-1 font-semibold cursor-pointer">Whole region</button>
+              <button id="viewHsv" class="flex-1 whitespace-nowrap rounded-md border border-line px-1 py-1 font-semibold cursor-pointer">Huntsville close-up</button>
+            </div>
+          </div>
+          <div id="map" class="h-[58vh] min-h-[340px] max-h-[520px] lg:h-[calc(100vh-13rem)] lg:max-h-[720px]" role="region" aria-label="Map of farmers markets and pick-your-own farms"></div>
+          <p class="px-3 py-2 text-xs text-muted border-t border-line">Simplified map. Pins are placed by street and town and may be off by a few blocks, so use "Get directions" for the exact spot.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="produce" class="mx-auto max-w-7xl px-4 sm:px-8 pt-14 pb-16 scroll-mt-14">
+    <h2 class="font-display text-3xl sm:text-4xl border-l-8 border-sun pl-3">What's good for you, and when</h2>
+    <p class="mt-2 text-muted max-w-2xl">The dark bars with a check-style underline show the usual North Alabama harvest months. Open any card for the health benefits, a picking tip, and the places that grow it.</p>
+    <div id="produceGrid" class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3"></div>
+  </section>
+</main>
+
+<footer class="border-t border-line">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 py-8 text-sm text-muted grid gap-2">
+    <p>Places, addresses, hours, and produce come from the Huntsville farms and markets list. Harvest months are typical for North Alabama and shift with the weather.</p>
+    <p>Nutrition notes are general information, not medical advice.</p>
+  </div>
+</footer>
+
+<dialog id="dlg" class="m-auto w-[min(94vw,34rem)] max-h-[88vh] rounded-2xl border-t-8 border-t-sun bg-card text-ink p-0 border border-line" aria-labelledby="dlgTitle"></dialog>
+
+<script>
+/* ------------------------------------------------------------------
+   The directory is built from this CSV (the attached file, unchanged).
+   ------------------------------------------------------------------ */
+const CSV = `Name,Location,Times,Type of Produce,Category
+Greene Street Farmers Market,"208 Eustis Ave, Huntsville, AL","Thursdays 3:00 PM - 7:00 PM (May-Aug), 3:00 PM - 6:00 PM (Sep-Oct)","Vegetables, fruits, artisan breads, jams, meats",Farmers Market
+Madison City Farmers Market,"1088 Hughes Rd, Madison, AL","Saturdays 8:00 AM - 12:00 PM (Apr-Sep), 9:00 AM - 12:00 PM (Oct-Nov)","Fresh produce, baked goods, eggs, local meats",Farmers Market
+The Market at MidCity,"5909 University Dr, Huntsville, AL",Sundays 12:00 PM - 4:00 PM (Mar-Nov),"Vegetables, fruits, local artisan foods",Farmers Market
+Bailey Cove Farmers Market,"12200 Bailey Cove Rd SE, Huntsville, AL",Saturdays 8:00 AM - 12:00 PM (Summer),"Vegetables, fruits, artisan breads, jams, eggs, meats",Farmers Market
+Oakwood Farmers Market,"5001 Adventist Blvd NW, Huntsville, AL",Fridays 12:00 PM - 5:00 PM (local farmers pavilion),"Organic produce, health products",Farmers Market
+Ayers Farm Farmers Market,"1022 Cook Ave NW, Huntsville, AL",Wednesdays - Saturdays 8:00 AM - 4:00 PM,"Fresh fruits, vegetables",Farmers Market
+The Providence Market,"7 Town Center Dr NW, Huntsville, AL","Saturdays 8:00 AM - 12:00 PM, Tuesdays 3:30 PM - 8:00 PM","Fruits, vegetables, local goods",Farmers Market
+Healthworks Farmers Market,"101 Governors Drive, Huntsville, AL",Thursdays 7:30 AM - 12:00 PM,"Fruits, vegetables, eggs, cheeses, meats",Farmers Market
+Scott's Orchard,"2163 Scott Road, Hazel Green, AL",Saturdays / Selected Days (Call ahead),"Apples, peaches",Pick Your Own
+Champion Farms,"310 South Strickland Road, Falkville, AL","Mondays, Wednesdays, Thursdays (Subject to weather)",Strawberries,Pick Your Own
+E & J Farms,"63 Parks Chapel Rd, Lacey's Spring, AL","Mondays - Saturdays 8:38 AM - 5:00 PM (Apr-Jun, Jul-Aug)","Peppers, summer squash, strawberries, tomatoes",Pick Your Own
+Gin House Branch Farm,"1449 S. Bethel Road, Decatur, AL","Daily, daylight to dark","Blueberries, muscadines",Pick Your Own
+Brown's Orchards and Vineyards,"1041 County Road 38, Florence, AL",Daily,"Peaches, muscadine grapes",Pick Your Own
+Isom's Orchard,"24012 US Highway 72, Athens, AL",Fridays & Saturdays 7:30 AM - 12:00 PM (U-Pick hours),"Peaches, grapes",Pick Your Own`;
+
+/* Approximate pin positions, keyed by the Name column. */
+const GEO = {
+  "Greene Street Farmers Market": [34.7298, -86.5838],
+  "Madison City Farmers Market": [34.7220, -86.7425],
+  "The Market at MidCity": [34.7437, -86.6745],
+  "Bailey Cove Farmers Market": [34.6205, -86.5440],
+  "Oakwood Farmers Market": [34.7570, -86.6535],
+  "Ayers Farm Farmers Market": [34.7445, -86.5925],
+  "The Providence Market": [34.7530, -86.6975],
+  "Healthworks Farmers Market": [34.7215, -86.5800],
+  "Scott's Orchard": [34.9680, -86.5320],
+  "Champion Farms": [34.3850, -86.8700],
+  "E & J Farms": [34.5050, -86.6150],
+  "Gin House Branch Farm": [34.5150, -86.8800],
+  "Brown's Orchards and Vineyards": [34.8850, -87.5850],
+  "Isom's Orchard": [34.7850, -86.9250]
+};
+
+/* Fruit and vegetable guide. months: 0 = January. */
+const PRODUCE = [
+  { id: "strawberries", name: "Strawberries", color: "#d93a3a", months: [3,4,5], season: "April to June",
+    match: /strawberr/,
+    headline: "A cup has more vitamin C than an orange.",
+    benefits: [
+      "Vitamin C supports your immune system and helps your body absorb iron.",
+      "About 3 grams of fiber per cup for only around 50 calories.",
+      "The red color comes from anthocyanins, plant compounds linked to heart health."
+    ],
+    tip: "Pick berries that are red all the way to the stem. They don't ripen after picking. Wash them right before eating, not before storing." },
+  { id: "peaches", name: "Peaches", color: "#f2994a", months: [5,6,7], season: "June to August",
+    match: /peach/,
+    headline: "Sweet, juicy, and only about 60 calories each.",
+    benefits: [
+      "A good source of vitamin C and of beta-carotene, which your body turns into vitamin A for eyes and skin.",
+      "Potassium helps keep blood pressure in a healthy range.",
+      "Eat the fuzzy skin too. That's where much of the fiber is."
+    ],
+    tip: "A ripe peach smells sweet and gives slightly near the stem. Ripen firm ones on the counter, then refrigerate." },
+  { id: "blueberries", name: "Blueberries", color: "#4a5fb5", months: [5,6], season: "June to July",
+    match: /blueberr/,
+    headline: "Among the richest fruits in antioxidants.",
+    benefits: [
+      "The deep blue pigments (anthocyanins) are linked in studies to better heart health and memory as we age.",
+      "Nearly 4 grams of fiber per cup.",
+      "A good source of vitamin K, vitamin C, and manganese."
+    ],
+    tip: "Ripe berries are fully blue with a dusty bloom and roll off the bush into your hand. They freeze beautifully on a tray." },
+  { id: "tomatoes", name: "Tomatoes", color: "#c8372d", months: [5,6,7,8], season: "June to September",
+    match: /tomato/,
+    headline: "The best everyday source of lycopene.",
+    benefits: [
+      "Lycopene, the red pigment, is an antioxidant linked to heart health. Your body absorbs more of it from cooked tomatoes with a little oil.",
+      "Good source of vitamin C and potassium.",
+      "Mostly water, so they help you stay hydrated in the summer heat."
+    ],
+    tip: "Keep ripe tomatoes on the counter, not in the fridge. Cold dulls the flavor." },
+  { id: "peppers", name: "Peppers", color: "#3d9a40", months: [5,6,7,8,9], season: "June to October",
+    match: /pepper/,
+    headline: "One red bell pepper covers a whole day's vitamin C.",
+    benefits: [
+      "Red, yellow, and orange peppers carry the most vitamin C and vitamin A. Green ones are simply picked earlier.",
+      "Vitamin B6 and folate help your body make red blood cells.",
+      "Very low in calories and crunchy enough to stand in for chips."
+    ],
+    tip: "Look for firm, glossy skin and a green stem. They keep about a week in the crisper drawer." },
+  { id: "squash", name: "Summer squash", color: "#e9c93a", months: [4,5,6,7,8], season: "May to September",
+    match: /squash/,
+    headline: "Filling, mild, and about 20 calories a cup.",
+    benefits: [
+      "Supplies vitamin C, potassium, and manganese.",
+      "The skin holds lutein and zeaxanthin, which support eye health, so don't peel it.",
+      "High water and fiber content make it easy on digestion."
+    ],
+    tip: "Smaller squash (6 to 8 inches) are sweeter and more tender than big ones." },
+  { id: "muscadines", name: "Muscadines", color: "#5b2a6e", months: [7,8,9], season: "August to October",
+    match: /muscadine/,
+    headline: "The South's native grape, with a thick skin full of antioxidants.",
+    benefits: [
+      "The skins and seeds are rich in polyphenols such as ellagic acid and resveratrol.",
+      "More fiber than table grapes if you eat the skins.",
+      "A good source of manganese and vitamin C."
+    ],
+    tip: "Ripe muscadines fall off the vine with a light touch. Bronze ones are often called scuppernongs." },
+  { id: "apples", name: "Apples", color: "#b5302a", months: [7,8,9], season: "August to October",
+    match: /apple/,
+    headline: "A medium apple has about 4 grams of fiber.",
+    benefits: [
+      "Pectin, a soluble fiber, helps lower LDL cholesterol and feeds healthy gut bacteria.",
+      "Supplies vitamin C and quercetin, an antioxidant found mostly in the peel.",
+      "Slow to digest, so it keeps you full between meals."
+    ],
+    tip: "Twist and lift rather than pull. Apples keep for weeks in the refrigerator, away from other produce." },
+  { id: "grapes", name: "Grapes", color: "#7b3f8c", months: [6,7,8], season: "July to September",
+    match: /grape/,
+    headline: "A hydrating snack with heart-friendly plant compounds.",
+    benefits: [
+      "Red and purple grapes carry polyphenols, including resveratrol, mostly in the skin.",
+      "A good source of vitamin K for blood clotting and bone health.",
+      "About 80 percent water. Try them frozen on a hot day."
+    ],
+    tip: "Look for green, flexible stems. Store unwashed in the fridge and rinse just before eating." },
+  { id: "sweetpotatoes", name: "Sweet potatoes", color: "#d2691e", months: [8,9,10], season: "September to November", staple: true,
+    headline: "One of the best sources of beta-carotene you can buy.",
+    benefits: [
+      "A single medium sweet potato gives you more than a day's worth of vitamin A.",
+      "About 4 grams of fiber, plus potassium.",
+      "Naturally sweet, so they need little added sugar."
+    ],
+    tip: "Store in a cool, dark cupboard, not the refrigerator." },
+  { id: "collards", name: "Collard greens", color: "#2e6b3a", months: [9,10,11,0,1,2], season: "October to March", staple: true,
+    headline: "A Southern staple packed with vitamin K.",
+    benefits: [
+      "Very high in vitamin K, plus vitamins A and C and folate.",
+      "One of the better plant sources of calcium.",
+      "Part of the cabbage family, whose natural compounds are being studied for protecting cells."
+    ],
+    tip: "Greens taste sweeter after the first frost. Choose dark leaves with no yellowing." },
+  { id: "okra", name: "Okra", color: "#6a994e", months: [5,6,7,8], season: "June to September", staple: true,
+    headline: "Soluble fiber in a pod.",
+    benefits: [
+      "The gel inside okra is soluble fiber, which helps steady blood sugar and cholesterol.",
+      "Good source of vitamin C, vitamin K, and folate.",
+      "Low in calories when roasted or grilled instead of fried."
+    ],
+    tip: "Pick pods under 4 inches. Larger ones turn tough and woody." },
+  { id: "watermelon", name: "Watermelon", color: "#e2536b", months: [5,6,7], season: "June to August", staple: true,
+    headline: "92 percent water and loaded with lycopene.",
+    benefits: [
+      "Helps you rehydrate in Alabama heat.",
+      "Has even more lycopene per serving than raw tomatoes.",
+      "Supplies vitamin C and citrulline, an amino acid that supports blood flow."
+    ],
+    tip: "Look for a creamy yellow spot where the melon sat on the ground, and a deep, hollow sound when you thump it." },
+  { id: "corn", name: "Sweet corn", color: "#f1c40f", months: [5,6], season: "June to July", staple: true,
+    headline: "A whole grain you can eat off the cob.",
+    benefits: [
+      "Provides fiber and B vitamins such as thiamin and folate.",
+      "Yellow corn has lutein and zeaxanthin for eye health.",
+      "Fresh corn has less sugar than its name suggests, about 6 grams an ear."
+    ],
+    tip: "Eat it the day you buy it. The sugars begin turning to starch as soon as it's picked." }
+];
+const P_BY_ID = Object.fromEntries(PRODUCE.map(p => [p.id, p]));
+
+/* ---------- CSV parsing ---------- */
+function parseCSV(text) {
+  const rows = []; let row = [], cell = "", inQ = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (inQ) {
+      if (c === '"' && text[i + 1] === '"') { cell += '"'; i++; }
+      else if (c === '"') inQ = false;
+      else cell += c;
+    } else if (c === '"') inQ = true;
+    else if (c === ",") { row.push(cell); cell = ""; }
+    else if (c === "\n" || c === "\r") {
+      if (c === "\r" && text[i + 1] === "\n") i++;
+      row.push(cell); cell = "";
+      if (row.some(v => v.trim() !== "")) rows.push(row);
+      row = [];
+    } else cell += c;
+  }
+  if (cell !== "" || row.length) { row.push(cell); if (row.some(v => v.trim() !== "")) rows.push(row); }
+  const head = rows.shift().map(h => h.trim());
+  return rows.map(r => Object.fromEntries(head.map((h, i) => [h, (r[i] || "").trim()])));
+}
+
+const DAY_NAMES = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+const MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const MON3 = MONTH_NAMES.map(m => m.slice(0, 3).toLowerCase());
+
+function parseDays(t) {
+  const low = t.toLowerCase(), set = new Set();
+  if (/daily/.test(low)) return new Set([0, 1, 2, 3, 4, 5, 6]);
+  const dn = "(sun|mon|tues|wednes|thurs|fri|satur)days?";
+  const idx = s => DAY_NAMES.findIndex(d => d.toLowerCase().startsWith(s.slice(0, 3)));
+  for (const m of low.matchAll(new RegExp(dn + "\\s*-\\s*" + dn, "g"))) {
+    let a = idx(m[1]); const b = idx(m[2]);
+    for (let k = 0; k < 7; k++) { set.add(a); if (a === b) break; a = (a + 1) % 7; }
+  }
+  for (const m of low.matchAll(new RegExp(dn, "g"))) set.add(idx(m[1]));
+  return set;
+}
+function parseMonths(t) {
+  const low = t.toLowerCase(), set = new Set();
+  const mn = "(" + MON3.join("|") + ")[a-z]*";
+  for (const m of low.matchAll(new RegExp("\\b" + mn + "\\s*-\\s*" + mn, "g"))) {
+    let a = MON3.indexOf(m[1]); const b = MON3.indexOf(m[2]);
+    for (let k = 0; k < 12; k++) { set.add(a); if (a === b) break; a = (a + 1) % 12; }
+  }
+  if (/summer/.test(low)) [5, 6, 7].forEach(x => set.add(x));
+  return set.size ? set : null;
+}
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+
+const PLACES = parseCSV(CSV).map((r, i) => {
+  const items = r["Type of Produce"].split(",").map(s => s.trim()).filter(Boolean).map(label => {
+    const p = PRODUCE.find(p => p.match && p.match.test(label.toLowerCase()));
+    return { label: cap(label), id: p ? p.id : null };
+  });
+  return {
+    i, name: r.Name, location: r.Location, times: r.Times, category: r.Category, items,
+    isPick: /pick/i.test(r.Category),
+    days: parseDays(r.Times), months: parseMonths(r.Times),
+    town: (r.Location.split(",").slice(-2, -1)[0] || "").trim(),
+    latlng: GEO[r.Name] || null,
+    hay: [r.Name, r.Location, r.Times, r["Type of Produce"], r.Category].join(" ").toLowerCase()
+  };
+});
+
+const NOW = new Date(), THIS_MONTH = NOW.getMonth(), TODAY = NOW.getDay();
+
+/* ---------- Small pieces of UI ---------- */
+function dot(color, size = 12) {
+  return `<span aria-hidden="true" class="inline-block rounded-full shrink-0" style="width:${size}px;height:${size}px;background:${color};box-shadow:0 0 0 1.5px rgba(255,255,255,.85)"></span>`;
+}
+function itemChips(place) {
+  return place.items.map(it => it.id
+    ? `<button data-produce="${it.id}" class="inline-flex items-center gap-1.5 rounded-full bg-sunsoft border border-ink/40 px-3 text-sm font-semibold text-ink cursor-pointer hover:brightness-95">${dot(P_BY_ID[it.id].color, 10)}${esc(it.label)}</button>`
+    : `<span class="inline-flex items-center rounded-full border border-line px-3 min-h-[44px] sm:min-h-0 sm:py-1 text-sm text-muted">${esc(it.label)}</span>`
+  ).join("");
+}
+function mapsUrl(p) {
+  return "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(p.name + ", " + p.location);
+}
+function monthBadge(p) {
+  if (!p.months) return "";
+  const open = p.months.has(THIS_MONTH);
+  return `<span class="rounded-full px-2 py-0.5 text-xs font-semibold ${open ? "bg-leaf text-onleaf" : "border border-ink/50 text-ink"}">${open ? "✓ Open in " : "✕ Closed in "}${MONTH_NAMES[THIS_MONTH]}</span>`;
+}
+function seasonStrip(p, big) {
+  const cells = MONTH_NAMES.map((m, i) => {
+    const on = p.months.includes(i), now = i === THIS_MONTH;
+    return `<span class="flex-1 text-center text-[11px] font-semibold rounded-sm ${big ? "py-1.5" : "py-1"} ${on ? "bg-leaf text-onleaf border-b-4 border-sun" : "border border-line text-muted"}" style="${now ? "outline:3px solid var(--ink);outline-offset:1px" : ""}">${m[0]}</span>`;
+  }).join("");
+  return `<div class="flex gap-[3px]" role="img" aria-label="In season ${p.season}">${cells}</div>`;
+}
+
+/* ---------- Hero ---------- */
+const nMarkets = PLACES.filter(p => !p.isPick).length, nPick = PLACES.length - nMarkets;
+document.getElementById("heroSub").textContent =
+  `${nMarkets} farmers markets and ${nPick} pick-your-own farms across North Alabama: when they're open, what they grow, and why it's good for you.`;
+document.getElementById("seasonTitle").textContent = `In season in ${MONTH_NAMES[THIS_MONTH]}`;
+const inSeason = PRODUCE.filter(p => p.months.includes(THIS_MONTH));
+document.getElementById("seasonNow").innerHTML = inSeason.length
+  ? inSeason.map(p => `<button data-produce="${p.id}" class="inline-flex items-center gap-2 rounded-full bg-onfield/10 border border-sun/70 px-3 py-1.5 font-semibold cursor-pointer hover:bg-onfield/20">${dot(p.color)}${p.name}</button>`).join("")
+  : `<p class="text-sm">The fields are resting. Markets with year-round hours still carry stored and greenhouse produce.</p>`;
+
+/* ---------- Map ---------- */
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const map = L.map("map", { zoomSnap: 0.25, minZoom: 8, maxZoom: 15, scrollWheelZoom: false, attributionControl: true });
+map.zoomControl.setPosition("bottomleft");
+map.attributionControl.setPrefix('<a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a>');
+
+const RIVER = [[34.33,-86.28],[34.40,-86.33],[34.47,-86.39],[34.53,-86.46],[34.573,-86.565],[34.578,-86.66],[34.585,-86.74],[34.60,-86.86],[34.615,-86.98],[34.68,-87.10],[34.75,-87.25],[34.80,-87.38],[34.805,-87.52],[34.80,-87.625],[34.785,-87.69],[34.80,-87.85]];
+const ROADS = [
+  [[35.05,-86.89],[34.99,-86.88],[34.80,-86.935],[34.655,-86.93],[34.52,-86.90],[34.37,-86.895],[34.22,-86.88]],             // I-65
+  [[34.655,-86.93],[34.675,-86.84],[34.69,-86.75],[34.71,-86.67],[34.725,-86.60],[34.74,-86.55]],                           // I-565
+  [[34.80,-87.67],[34.825,-87.29],[34.79,-86.97],[34.785,-86.925],[34.755,-86.75],[34.745,-86.675],[34.74,-86.60],[34.72,-86.40]], // US-72
+  [[35.05,-86.57],[34.93,-86.57],[34.80,-86.585],[34.73,-86.59],[34.573,-86.565],[34.52,-86.60],[34.40,-86.55],[34.25,-86.50]]      // US-231
+];
+const TOWNS = [["Huntsville",34.705,-86.555],["Madison",34.695,-86.765],["Athens",34.815,-86.985],["Decatur",34.585,-87.03],["Florence",34.83,-87.70],["Hazel Green",34.925,-86.60],["Falkville",34.355,-86.93],["Lacey's Spring",34.535,-86.575],["Hartselle",34.44,-86.955]];
+
+L.polyline([[34.992,-88.2],[34.992,-86.0]], { className: "stateline", interactive: false }).addTo(map);
+ROADS.forEach(r => L.polyline(r, { className: "road", interactive: false, smoothFactor: 0 }).addTo(map));
+L.polyline(RIVER, { className: "river", interactive: false, smoothFactor: 0 }).addTo(map);
+const label = (txt, lat, lng, cls) => L.marker([lat, lng], { interactive: false, keyboard: false, icon: L.divIcon({ className: cls, html: `<span>${txt}</span>`, iconSize: [0, 0] }) }).addTo(map);
+TOWNS.forEach(t => label(t[0], t[1], t[2], "town-label"));
+label("Tennessee River", 34.715, -87.26, "water-label");
+label("Tennessee", 35.02, -87.2, "town-label");
+
+function popupHtml(p) {
+  return `<div style="min-width:min(220px,60vw);max-width:270px">
+    <p class="text-xs font-semibold text-muted">${esc(p.category)}${p.town ? " in " + esc(p.town) : ""}</p>
+    <p class="font-display text-lg leading-tight mt-0.5">${esc(p.name)}</p>
+    <p class="mt-2">${esc(p.location)}</p>
+    <p class="mt-1 font-semibold">${esc(p.times)}</p>
+    <div class="mt-2.5 flex flex-wrap gap-1.5">${itemChips(p)}</div>
+    <p class="mt-3"><a class="font-semibold underline" href="${mapsUrl(p)}" target="_blank" rel="noopener">Get directions</a></p>
+  </div>`;
+}
+const markers = {};
+PLACES.forEach(p => {
+  if (!p.latlng) return;
+  const m = L.marker(p.latlng, {
+    title: p.name, alt: `${p.name}, ${p.category}`, riseOnHover: true,
+    icon: L.divIcon({ className: "pin-wrap", html: `<span class="pin ${p.isPick ? "pin-pick" : "pin-market"}"></span>`, iconSize: [22, 22], iconAnchor: [11, 11], popupAnchor: [0, -10] })
+  }).addTo(map);
+  m.bindPopup(() => popupHtml(p), { maxWidth: Math.min(290, innerWidth - 90), autoPanPadding: [12, 12] });
+  m.on("popupopen", () => setActive(p.i, false));
+  m.on("popupclose", () => { if (active === p.i) setActive(null, false); });
+  markers[p.i] = m;
+});
+const ALL_BOUNDS = L.latLngBounds(PLACES.filter(p => p.latlng).map(p => p.latlng)).pad(0.12);
+const HSV_BOUNDS = L.latLngBounds([[34.60, -86.77], [34.775, -86.52]]);
+map.fitBounds(ALL_BOUNDS);
+map.setMaxBounds(ALL_BOUNDS.pad(0.6));
+document.getElementById("viewAll").onclick = () => { map.closePopup(); map.fitBounds(ALL_BOUNDS, { animate: !reduceMotion }); };
+document.getElementById("viewHsv").onclick = () => { map.closePopup(); map.fitBounds(HSV_BOUNDS, { animate: !reduceMotion }); };
+
+/* ---------- Directory list ---------- */
+let active = null;
+const state = { q: "", cat: "All", day: "any" };
+const listEl = document.getElementById("list"), countEl = document.getElementById("count");
+
+const cats = ["All", ...new Set(PLACES.map(p => p.category))];
+const catBtns = document.getElementById("catBtns");
+function drawCats() {
+  catBtns.innerHTML = cats.map(c => `<button data-cat="${esc(c)}" aria-pressed="${state.cat === c}" class="flex-1 px-3 py-2 text-sm font-semibold cursor-pointer ${state.cat === c ? "bg-leaf text-onleaf underline underline-offset-4 decoration-2" : "bg-paper text-ink"}">${esc(c)}</button>`).join("");
+}
+catBtns.addEventListener("click", e => { const b = e.target.closest("[data-cat]"); if (b) { state.cat = b.dataset.cat; drawCats(); drawList(); } });
+
+const daySel = document.getElementById("day");
+daySel.innerHTML = `<option value="any">Any day</option>` + [...Array(7)].map((_, k) => { const d = (TODAY + k) % 7; return `<option value="${d}">${DAY_NAMES[d]}${k === 0 ? " (today)" : ""}</option>`; }).join("");
+daySel.onchange = () => { state.day = daySel.value; drawList(); };
+document.getElementById("q").oninput = e => { state.q = e.target.value.trim().toLowerCase(); drawList(); };
+
+function visiblePlaces() {
+  return PLACES.filter(p =>
+    (state.cat === "All" || p.category === state.cat) &&
+    (state.day === "any" || p.days.has(+state.day)) &&
+    (!state.q || p.hay.includes(state.q)));
+}
+function drawList() {
+  const vis = visiblePlaces(), ids = new Set(vis.map(p => p.i));
+  PLACES.forEach(p => { const m = markers[p.i]; if (!m) return; if (ids.has(p.i)) m.addTo(map); else m.remove(); });
+  countEl.textContent = vis.length === PLACES.length ? `Showing all ${vis.length} places` : `Showing ${vis.length} of ${PLACES.length} places`;
+  if (!vis.length) {
+    listEl.innerHTML = `<div class="rounded-xl border border-dashed border-line p-6 text-center"><p class="font-semibold">No places match those filters.</p><p class="text-muted text-sm mt-1">Try a different day or a shorter search.</p><button id="clear" class="mt-3 rounded-full bg-leaf text-onleaf font-semibold px-4 py-2 cursor-pointer">Clear filters</button></div>`;
+    document.getElementById("clear").onclick = () => { state.q = ""; state.cat = "All"; state.day = "any"; document.getElementById("q").value = ""; daySel.value = "any"; drawCats(); drawList(); };
+    return;
+  }
+  listEl.innerHTML = vis.map(p => `
+    <article id="place-${p.i}" class="rounded-xl bg-card border-2 p-4 ${active === p.i ? "border-ink" : "border-line"}">
+      <div class="flex flex-wrap items-center gap-2 text-sm text-muted">
+        <span class="pin ${p.isPick ? "pin-pick" : "pin-market"}" style="width:14px;height:14px;border-width:2px;box-shadow:none"></span>
+        <span class="font-semibold">${esc(p.category)}</span>
+        ${monthBadge(p)}
+      </div>
+      <h3 class="mt-1.5 font-display text-xl leading-tight">${esc(p.name)}</h3>
+      <p class="mt-1 text-muted">${esc(p.location)}</p>
+      <p class="mt-2 font-semibold">${esc(p.times)}</p>
+      <div class="mt-3 flex flex-wrap gap-1.5">${itemChips(p)}</div>
+      <div class="mt-4 flex flex-wrap gap-2">
+        <button data-place="${p.i}" class="rounded-full bg-leaf text-onleaf font-semibold px-4 py-1.5 text-sm cursor-pointer">Show on map</button>
+        <a href="${mapsUrl(p)}" target="_blank" rel="noopener" class="btn inline-flex items-center rounded-full border-2 border-ink/50 font-semibold px-4 py-1.5 text-sm">Get directions</a>
+      </div>
+    </article>`).join("");
+}
+function setActive(i, scrollCard) {
+  active = i;
+  document.querySelectorAll("#list article").forEach(a => {
+    const on = a.id === "place-" + i;
+    a.classList.toggle("border-ink", on); a.classList.toggle("border-line", !on);
+  });
+  Object.entries(markers).forEach(([k, m]) => m.getElement() && m.getElement().classList.toggle("is-active", +k === i));
+}
+function focusPlace(i) {
+  const p = PLACES[i], m = markers[i];
+  if (!m) return;
+  if (!map.hasLayer(m)) { state.q = ""; state.cat = "All"; state.day = "any"; document.getElementById("q").value = ""; daySel.value = "any"; drawCats(); drawList(); }
+  const mapEl = document.getElementById("mapWrap"), r = mapEl.getBoundingClientRect();
+  if (r.top < 0 || r.bottom > innerHeight) mapEl.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+  map.setView(p.latlng, Math.max(map.getZoom(), 11), { animate: !reduceMotion });
+  setTimeout(() => m.openPopup(), reduceMotion ? 0 : 450);
+}
+
+/* ---------- Produce guide + popup ---------- */
+const placesFor = id => PLACES.filter(p => p.items.some(it => it.id === id));
+document.getElementById("produceGrid").innerHTML = PRODUCE.map(p => {
+  const n = placesFor(p.id).length;
+  return `<button data-produce="${p.id}" class="text-left rounded-xl bg-card border border-line p-4 cursor-pointer hover:border-leaf">
+    <span class="flex items-center gap-3">${dot(p.color, 28)}<span class="font-display text-xl">${p.name}</span></span>
+    <span class="block mt-2 text-muted">${p.headline}</span>
+    <span class="block mt-3">${seasonStrip(p)}</span>
+    <span class="block mt-2 text-sm font-semibold text-leaf">${n ? `Grown at ${n} listed ${n === 1 ? "farm" : "farms"}` : "Look for it at the farmers markets"}</span>
+  </button>`;
+}).join("");
+
+const dlg = document.getElementById("dlg");
+function openProduce(id) {
+  const p = P_BY_ID[id]; if (!p) return;
+  const where = placesFor(id);
+  dlg.innerHTML = `
+    <div class="p-5 sm:p-6 overflow-y-auto max-h-[88vh]">
+      <div class="flex items-start justify-between gap-3">
+        <div class="flex items-center gap-3">${dot(p.color, 36)}<h2 id="dlgTitle" class="font-display text-3xl leading-none">${p.name}</h2></div>
+        <button data-close class="rounded-full border border-line px-3 py-1 text-sm font-semibold cursor-pointer">Close</button>
+      </div>
+      <p class="mt-3 text-lg">${p.headline}</p>
+      <div class="mt-4">
+        <p class="text-sm font-semibold mb-1.5">In season ${p.season}${p.months.includes(THIS_MONTH) ? ", so now is the time" : ""}</p>
+        ${seasonStrip(p, true)}
+      </div>
+      <h3 class="mt-5 font-semibold">Why it's good for you</h3>
+      <ul class="mt-2 grid gap-2">${p.benefits.map(b => `<li class="flex gap-2.5"><span aria-hidden="true" class="mt-2 h-2 w-2 rounded-full bg-leaf shrink-0"></span><span>${b}</span></li>`).join("")}</ul>
+      <h3 class="mt-5 font-semibold">Picking and keeping</h3>
+      <p class="mt-1">${p.tip}</p>
+      <h3 class="mt-5 font-semibold">Where to get it</h3>
+      ${where.length
+        ? `<div class="mt-2 grid gap-2">${where.map(w => `<button data-place="${w.i}" class="text-left rounded-lg border border-line px-3 py-2 cursor-pointer hover:border-leaf"><span class="font-semibold">${esc(w.name)}</span><span class="block text-sm text-muted">${esc(w.town)}. ${esc(w.times)}</span></button>`).join("")}</div>`
+        : `<p class="mt-1 text-muted">The listings don't name ${p.name.toLowerCase()} at a specific farm. It's a common sight at North Alabama farmers markets in season, so ask the growers there.</p>
+           <button data-filter-markets class="mt-3 rounded-full bg-leaf text-onleaf font-semibold px-4 py-1.5 text-sm cursor-pointer">Show the farmers markets</button>`}
+    </div>`;
+  if (!dlg.open) dlg.showModal();
+  dlg.querySelector("[data-close]").focus();
+}
+dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+
+document.addEventListener("click", e => {
+  const t = e.target.closest("[data-produce],[data-place],[data-close],[data-filter-markets]");
+  if (!t) return;
+  if (t.hasAttribute("data-close")) return dlg.close();
+  if (t.dataset.produce) return openProduce(t.dataset.produce);
+  if (t.hasAttribute("data-filter-markets")) {
+    dlg.close();
+    const c = cats.find(c => /market/i.test(c)); if (c) state.cat = c;
+    drawCats(); drawList();
+    document.getElementById("find").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
+    return;
+  }
+  if (t.dataset.place) { if (dlg.open) dlg.close(); focusPlace(+t.dataset.place); }
+});
+
+drawCats();
+drawList();
+
+/* ---------- Light / dark mode ---------- */
+const themeBtn = document.getElementById("themeBtn"), root = document.documentElement;
+const currentTheme = () => root.getAttribute("data-theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+function paintThemeBtn() {
+  const dark = currentTheme() === "dark";
+  themeBtn.innerHTML = (dark ? "☀ Light" : "☾ Dark") + '<span class="hidden sm:inline">&nbsp;mode</span>';
+  themeBtn.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+  themeBtn.setAttribute("aria-pressed", String(dark));
+}
+themeBtn.onclick = () => {
+  const next = currentTheme() === "dark" ? "light" : "dark";
+  root.setAttribute("data-theme", next);
+  try { localStorage.setItem("hsv-theme", next); } catch (e) {}
+  paintThemeBtn();
+};
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paintThemeBtn);
+paintThemeBtn();
+</script>
+</body>
+</html>
